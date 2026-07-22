@@ -1031,6 +1031,18 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 .film-scenes { position: absolute; z-index: 2; right: 20px; bottom: 52px; display: flex; gap: 6px; }
 .film-scenes span { width: 28px; height: 3px; border-radius: 999px; background: rgba(255,255,255,.35); transition: width .22s ease, background .22s ease; }
 .film-scenes span.is-active { width: 48px; background: var(--orange); }
+.film-head,
+.film-caption,
+.film-scenes { transition: opacity .28s ease, transform .28s ease; }
+.film-endcard { position: absolute; z-index: 4; inset: 0; padding: 12% 10%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; opacity: 0; pointer-events: none; color: #fff; text-align: left; background: linear-gradient(105deg,rgba(0,74,66,.94) 0%,rgba(0,105,92,.86) 52%,rgba(15,26,29,.7) 100%); backdrop-filter: blur(1.5px); transform: scale(1.018); transition: opacity .42s ease, transform .65s ease; }
+.film-endcard::before { content: ""; width: 58px; height: 3px; margin-bottom: 17px; border-radius: 999px; background: var(--orange); }
+.film-endcard .end-kicker { margin-bottom: 9px; color: rgba(255,255,255,.74); font-family: 'JetBrains Mono','SF Mono',Consolas,monospace; font-size: .62rem; font-weight: 800; letter-spacing: .16em; }
+.film-endcard strong { max-width: 12em; font-size: clamp(1.45rem,3.2vw,2.45rem); font-weight: 900; line-height: 1.24; letter-spacing: .02em; }
+.film-endcard small { margin-top: 15px; color: #fff; font-size: .78rem; font-weight: 800; letter-spacing: .1em; }
+.hero-c-film.is-endcard .film-endcard { opacity: 1; transform: scale(1); }
+.hero-c-film.is-endcard .film-head,
+.hero-c-film.is-endcard .film-caption,
+.hero-c-film.is-endcard .film-scenes { opacity: 0; transform: translateY(5px); }
 .hero-c-note { display: flex; justify-content: space-between; gap: 18px; margin: 14px 4px 0 22px; color: var(--text-mute); font-size: .72rem; font-weight: 700; letter-spacing: .04em; }
 .hero-c-note strong { color: var(--teal-deep); }
 @media (max-width: 1160px) {
@@ -1051,6 +1063,9 @@ h3 { font-size: 1.1rem; font-weight: 700; }
   .film-scenes { right: 14px; bottom: 46px; }
   .film-scenes span { width: 20px; }
   .film-scenes span.is-active { width: 34px; }
+  .film-endcard { padding: 12% 9%; }
+  .film-endcard::before { margin-bottom: 12px; }
+  .film-endcard small { margin-top: 10px; }
   .hero-c-note { margin-left: 12px; font-size: .66rem; }
   .hero-c-mechanism { grid-template-columns: 1fr; gap: 9px; text-align: center; }
   .hero-c-mechanism .ask-arrow { transform: rotate(90deg); }
@@ -1399,6 +1414,7 @@ h3 { font-size: 1.1rem; font-weight: 700; }
           <video muted loop playsinline preload="none" poster="assets/hero-c-online-poster.jpg?v=20260722-10"
                  data-webm="assets/hero-c-online.webm?v=20260722-10"
                  data-mp4="assets/hero-c-online.mp4?v=20260722-10" aria-hidden="true"></video>
+          <div class="film-endcard" aria-hidden="true"><span class="end-kicker">ORANGEAPPLE ONLINE CLASS</span><strong>看得懂・做得出<br>卡住有人帶</strong><small>雙師制線上課程</small></div>
           <div class="film-head" aria-hidden="true">
             <span class="live">真實線上課畫面</span><span>17 SEC・06 SHOTS</span>
           </div>
@@ -1906,6 +1922,7 @@ h3 { font-size: 1.1rem; font-weight: 700; }
   var sceneNo = document.querySelector('.film-caption .scene-no');
   var sceneText = document.querySelector('.film-caption .scene-text');
   var sceneBars = Array.prototype.slice.call(document.querySelectorAll('.film-scenes span'));
+  var film = video.closest('.hero-c-film');
   var scenes = [
     { start: 0, text: '跟著影片專心上課' },
     { start: 2.75, text: '自己動手完成程式' },
@@ -1916,6 +1933,8 @@ h3 { font-size: 1.1rem; font-weight: 700; }
   ];
 
   function updateScene() {
+    var endcardStart = Number.isFinite(video.duration) ? Math.max(0, video.duration - 1.35) : 15.35;
+    if (film) film.classList.toggle('is-endcard', video.currentTime >= endcardStart);
     var current = 0;
     for (var i = scenes.length - 1; i >= 0; i--) {
       if (video.currentTime >= scenes[i].start) { current = i; break; }
