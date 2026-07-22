@@ -1138,18 +1138,29 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 .course-route span { flex: 0 0 auto; color: var(--teal-deep); font-size: .78rem; font-weight: 900; letter-spacing: .08em; }
 .course-route strong { color: var(--text); font-size: 1rem; font-weight: 900; }
 .course-intro-note { margin: 0; border: 1px solid rgba(255,163,0,.24); background: var(--orange-50); color: var(--gray); font-size: .86rem; line-height: 1.7; }
-.course-group { margin-top: 48px; }
-.course-group-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; border-left: 5px solid var(--line); padding-left: 16px; margin-bottom: 6px; }
-.course-group.g-play  .course-group-head { border-color: var(--orange); }
-.course-group.g-elite .course-group-head { border-color: var(--teal); }
-.course-group.g-hack  .course-group-head { border-color: var(--purple); }
-.course-group.g-mod   .course-group-head { border-color: var(--red); }
-.course-group h3 { font-size: 1.25rem; font-weight: 900; }
+.course-group { margin-top: 16px; }
+.course-group:first-of-type { margin-top: 38px; }
+.course-accordion { overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: #fff; box-shadow: var(--shadow-sm); transition: border-color .18s ease, box-shadow .18s ease; }
+.course-accordion[open] { border-color: rgba(0,105,92,.2); box-shadow: var(--shadow-md); }
+.course-summary { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 20px; min-height: 104px; padding: 21px 24px 21px 20px; border-left: 5px solid var(--line); cursor: pointer; list-style: none; }
+.course-summary::-webkit-details-marker { display: none; }
+.course-summary:hover { background: var(--bg-light); }
+.course-summary:focus-visible { outline: 3px solid rgba(255,163,0,.48); outline-offset: -3px; }
+.course-group.g-play  .course-summary { border-color: var(--orange); }
+.course-group.g-elite .course-summary { border-color: var(--teal); }
+.course-group.g-hack  .course-summary { border-color: var(--purple); }
+.course-group.g-mod   .course-summary { border-color: var(--red); }
+.course-summary-main { min-width: 0; display: flex; flex-direction: column; gap: 7px; }
+.course-summary-title { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.course-summary-title strong { color: var(--text); font-size: 1.18rem; font-weight: 900; }
+.course-summary-desc { color: var(--text-mute); font-size: .86rem; line-height: 1.65; }
+.course-chevron { width: 24px; height: 24px; color: var(--teal-deep); transition: transform .2s ease; }
+.course-accordion[open] .course-chevron { transform: rotate(180deg); }
+.course-group-body { padding: 24px; border-top: 1px solid var(--line-soft); }
 .tag { display: inline-block; font-size: 0.74rem; font-weight: 700; border-radius: 999px; padding: 3px 12px; vertical-align: middle; }
 .tag-dual { background: var(--teal-pale); color: var(--teal-deep); }
 .tag-lecture { background: var(--purple-pale); color: #6D28D9; }
 .tag-online-only { background: var(--orange-pale); color: var(--text); }
-.course-group .g-sub { font-size: 0.9rem; color: var(--text-mute); margin: 0 0 20px 21px; }
 .course-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .course-group.g-mod .course-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 920px; margin-inline: auto; }
 .elite-track { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; counter-reset: elite-stage; }
@@ -1170,6 +1181,11 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 }
 @media (max-width: 560px) {
   .course-route { align-items: flex-start; flex-direction: column; gap: 5px; }
+  .course-summary { min-height: 0; padding: 18px 16px 18px 14px; gap: 12px; }
+  .course-summary-title { gap: 8px; }
+  .course-summary-title strong { font-size: 1.04rem; }
+  .course-summary-desc { font-size: .8rem; }
+  .course-group-body { padding: 18px 14px; }
   .course-cards,
   .course-group.g-mod .course-cards { grid-template-columns: 1fr; }
   .elite-track { grid-template-columns: 1fr; }
@@ -1496,24 +1512,28 @@ h3 { font-size: 1.1rem; font-weight: 700; }
       <p class="lead">孩子可以從興趣啟蒙一路銜接進階檢定與競賽，也能依自己的學習需求選擇獨立課程。</p>
       <div class="course-intro">
         <div class="course-route"><span>完整學習路徑</span><strong>探索入口 → 菁英九階段 → 成果出口</strong></div>
-        <p class="course-intro-note">依年級與程度找到起點，再依升學、認證或競賽目標選擇出口；部分課程僅在線上開課。</p>
+        <p class="course-intro-note">先看完整路徑；想了解哪一類，再展開查看。部分課程僅在線上開課。</p>
       </div>
     </div>
 
-    <div class="course-group g-play reveal">
-      <div class="course-group-head"><h3>探索入口・玩創系列</h3><span class="tag tag-dual">雙師教學</span></div>
-      <p class="g-sub">國小低年級起的程式啟蒙——用孩子喜歡的世界當教室，建立序列、迴圈、條件等基礎觀念；各課程適齡見卡片。</p>
-      <div class="course-cards">
+    <details class="course-group course-accordion g-play reveal">
+      <summary class="course-summary">
+        <span class="course-summary-main"><span class="course-summary-title"><strong>探索入口・玩創系列</strong><span class="tag tag-dual">雙師教學</span></span><span class="course-summary-desc">國小低年級起，用孩子喜歡的世界建立程式基礎。</span></span>
+        <svg class="course-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="course-group-body"><div class="course-cards">
         <a class="course-card" href="https://orangeapple.co/courses/aibot"><h4>頑皮艾伯特 <span class="tag tag-online-only">僅線上</span></h4><p>幼齡程式啟蒙，遊戲化情境學基礎邏輯。</p><div class="meta">小 1–2・線上 1:6 小班・唯一可用平板</div></a>
         <a class="course-card" href="https://orangeapple.co/courses/minecraft"><h4>麥塊教育版</h4><p>在 Minecraft 教育版的世界裡學程式邏輯。</p><div class="meta">小 3・線上 1:7 小班・需自備滑鼠</div></a>
         <a class="course-card" href="https://orangeapple.co/courses/roblox_ai"><h4>Roblox AI 遊戲設計</h4><p>與 AI 協作，打造自己的 Roblox 遊戲世界。</p><div class="meta">小 3 以上・線上 1:7 小班</div></a>
-      </div>
-    </div>
+      </div></div>
+    </details>
 
-    <div class="course-group g-elite reveal">
-      <div class="course-group-head"><h3>菁英九階段主幹</h3><span class="tag tag-dual">4 年級以上・雙師教學</span></div>
-      <p class="g-sub">從 Scratch 到 AI 的九階一條龍；國中零基礎可直接從 Python 入門，8 年級以上也可依程度從 JavaScript 起步。</p>
-      <div class="elite-track" aria-label="菁英九階段完整課程路徑">
+    <details class="course-group course-accordion g-elite reveal">
+      <summary class="course-summary">
+        <span class="course-summary-main"><span class="course-summary-title"><strong>菁英九階段主幹</strong><span class="tag tag-dual">4 年級以上・雙師教學</span></span><span class="course-summary-desc">從 Scratch 到 AI 的完整主幹，依年級與程度找到起點。</span></span>
+        <svg class="course-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="course-group-body"><div class="elite-track" aria-label="菁英九階段完整課程路徑">
         <a class="elite-stage" href="https://orangeapple.co/courses/scratch-basic"><span class="stage-no">01</span><strong>Scratch 程式觀念</strong></a>
         <a class="elite-stage" href="https://orangeapple.co/courses/scratch-basic"><span class="stage-no">02</span><strong>Scratch 運算思維</strong></a>
         <a class="elite-stage" href="https://orangeapple.co/courses/python"><span class="stage-no">03</span><strong>Python 初階</strong></a>
@@ -1523,28 +1543,33 @@ h3 { font-size: 1.1rem; font-weight: 700; }
         <a class="elite-stage" href="https://orangeapple.co/courses/database"><span class="stage-no">07</span><strong>網路與資料庫</strong></a>
         <a class="elite-stage" href="https://orangeapple.co/courses/algorithm"><span class="stage-no">08</span><strong>演算法開發</strong><small>ITS 運算思維銜接點</small></a>
         <a class="elite-stage" href="https://orangeapple.co/courses/ai"><span class="stage-no">09</span><strong>AI 人工智慧</strong></a>
-      </div>
-    </div>
+      </div></div>
+    </details>
 
-    <div class="course-group g-hack reveal">
-      <div class="course-group-head"><h3>成果出口</h3><span class="tag tag-lecture">依目標選擇・不是固定順序</span></div>
-      <p class="g-sub">完整打底後，再依孩子的年級、程度與目標，選擇國際認證、升學檢定或競賽訓練。</p>
-      <div class="course-cards">
+    <details class="course-group course-accordion g-hack reveal">
+      <summary class="course-summary">
+        <span class="course-summary-main"><span class="course-summary-title"><strong>成果出口</strong><span class="tag tag-lecture">依目標選擇・不是固定順序</span></span><span class="course-summary-desc">依孩子的目標，選擇國際認證、升學檢定或競賽訓練。</span></span>
+        <svg class="course-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="course-group-body"><div class="course-cards">
         <a class="course-card" href="https://orangeapple.co/courses/its"><h4>ITS 國際認證</h4><p>把 Python、JavaScript、HTML/CSS 與運算思維能力，轉化為國際證照。</p><div class="meta">認證出口・講師授課＋補課影片</div></a>
         <a class="course-card" href="https://orangeapple.co/courses/apcs"><h4>APCS 升學檢定</h4><p>把語法、演算法與解題能力，轉化為升學可被看見的成績。</p><div class="meta">升學出口・講師授課＋補課影片</div></a>
         <a class="course-card" href="https://orangeapple.co/courses/contestant/"><h4>選手班與競賽訓練</h4><p>持續進入解題、演算法與實戰訓練，追求更高級分或競賽表現。</p><div class="meta">競賽出口・8 人小班・需程度評估</div></a>
       </div>
       <p class="outcome-note">三種出口可依目標個別選擇，不代表每位孩子都要依序修讀。</p>
-    </div>
+      </div>
+    </details>
 
-    <div class="course-group g-mod reveal">
-      <div class="course-group-head"><h3>能力補強線</h3><span class="tag tag-online-only">可與主幹並行・選配</span></div>
-      <p class="g-sub">不需依照九階段順序修讀，可依孩子的興趣與需求單獨選擇。</p>
-      <div class="course-cards">
+    <details class="course-group course-accordion g-mod reveal">
+      <summary class="course-summary">
+        <span class="course-summary-main"><span class="course-summary-title"><strong>能力補強線</strong><span class="tag tag-online-only">可與主幹並行・選配</span></span><span class="course-summary-desc">依孩子的興趣與需求單獨選擇，不必照九階段順序修讀。</span></span>
+        <svg class="course-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="course-group-body"><div class="course-cards">
         <a class="course-card" href="https://orangeapple.co/courses/math"><h4>麥思數學 <span class="tag tag-online-only">僅線上</span></h4><p>用邏輯思維方法學數學，雙師教學。</p><div class="meta">線上 1:6 小班</div></a>
         <a class="course-card" href="https://orangeapple.co/courses/ai-thinking"><h4>AI 思維：實戰問題解決課 <span class="tag tag-online-only">僅線上</span></h4><p>提示詞設計、問題拆解與創作整合，AI 時代的數位素養。</p><div class="meta">線上 1:10 小班・講師授課＋補課影片</div></a>
-      </div>
-    </div>
+      </div></div>
+    </details>
 
     <p class="courses-more reveal">想看各課程的完整介紹與學習地圖？<a href="https://orangeapple.co/courses">前往課程總覽 →</a></p>
   </div>
