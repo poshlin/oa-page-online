@@ -1335,6 +1335,39 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 .video-rail .video-card .vc-label { font-size: 0.8rem; padding: 12px 14px 10px; }
 .video-rail .video-card .play span { width: 44px; height: 44px; font-size: 0.95rem; }
 
+.online-voices { margin-top: 46px; padding: 30px; border: 1px solid rgba(0,119,107,.14); border-radius: var(--radius); background: linear-gradient(135deg, rgba(228,249,247,.72), rgba(255,255,255,.94) 56%, rgba(255,243,220,.52)); box-shadow: var(--shadow-sm); }
+.online-voices-head { display: flex; align-items: end; justify-content: space-between; gap: 28px; margin-bottom: 20px; }
+.online-voices-head h3 { margin: 0 0 4px; font-size: 1.2rem; font-weight: 900; }
+.online-voices-head p { margin: 0; color: var(--text-mute); font-size: .86rem; }
+.online-voices-note { flex: 0 0 auto; color: var(--teal-deep); font-size: .78rem; font-weight: 800; letter-spacing: .04em; }
+.online-review-rail { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+.online-review { min-width: 0; padding: 22px 24px; border: 1px solid rgba(0,119,107,.12); border-radius: 14px; background: rgba(255,255,255,.94); box-shadow: var(--shadow-sm); }
+.online-review .review-stars { display: block; margin-bottom: 9px; color: var(--orange); font-size: .82rem; letter-spacing: .08em; }
+.online-review blockquote { margin: 0; color: var(--text); font-size: .94rem; font-weight: 700; line-height: 1.75; }
+.online-review footer { margin-top: 13px; color: var(--text-mute); font-size: .76rem; font-weight: 700; }
+.creator-proof { margin-top: 16px; border-top: 1px solid rgba(0,119,107,.11); }
+.creator-proof summary { min-height: 48px; display: flex; align-items: center; gap: 10px; list-style: none; cursor: pointer; color: var(--teal-deep); font-size: .85rem; font-weight: 800; }
+.creator-proof summary::-webkit-details-marker { display: none; }
+.creator-proof summary::after { content: "→"; transition: transform .22s ease; }
+.creator-proof[open] summary::after { transform: rotate(90deg); }
+.creator-proof summary span { color: var(--text-mute); font-size: .75rem; font-weight: 500; }
+.creator-links { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 9px; padding: 2px 0 4px; }
+.creator-links a { min-height: 44px; display: flex; align-items: center; padding: 9px 12px; border: 1px solid var(--line); border-radius: 10px; background: #fff; color: var(--text); font-size: .76rem; font-weight: 700; line-height: 1.4; text-decoration: none; transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease; }
+.creator-links a:hover { transform: translateY(-2px); border-color: rgba(0,119,107,.32); box-shadow: var(--shadow-sm); }
+@media (max-width: 760px) {
+  .online-voices { padding: 24px 18px; }
+  .online-voices-head { display: block; }
+  .online-voices-note { display: block; margin-top: 8px; }
+  .online-review-rail { grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: minmax(270px, 84%); gap: 12px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+  .online-review { scroll-snap-align: start; }
+  .creator-links { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 460px) {
+  .creator-proof summary { align-items: flex-start; flex-wrap: wrap; padding: 13px 0; }
+  .creator-proof summary span { flex-basis: 100%; }
+  .creator-links { grid-template-columns: 1fr; }
+}
+
 /* ---------- 06 FAQ ---------- */
 .sec-faq { background: var(--bg-light); }
 .faq-list { margin-top: 36px; counter-reset: faq; }
@@ -1699,6 +1732,41 @@ h3 { font-size: 1.1rem; font-weight: 700; }
           <p>旅居美國、越南、波蘭華沙等地的台灣家庭，孩子透過同一套線上課程、以中文持續學習程式。課程以影片為主、輔導在台灣時間的固定時段，<strong>外派或移居的家庭，孩子換了城市也不用中斷學習</strong>。</p>
         </div>
       </div>
+    </div>
+
+    <div class="online-voices reveal" aria-labelledby="online-voices-title">
+      <div class="online-voices-head">
+        <div>
+          <h3 id="online-voices-title">真正上過線上課的家長，這樣說</h3>
+          <p>從省下接送，到孩子願意持續學習——線上課好不好，家長看得最清楚。</p>
+        </div>
+        <span class="online-voices-note">線上課程家長回饋</span>
+      </div>
+      <div class="online-review-rail" role="list" aria-label="線上課程 Google 家長評論">
+        <article class="online-review" role="listitem">
+          <span class="review-stars" aria-label="五星評論">★★★★★</span>
+          <blockquote>「線上課程省去接送時間，老師會依孩子的進度個別指導；孩子每次上完課，都說自己收穫很多。」</blockquote>
+          <footer>朱品叡・Google 評論</footer>
+        </article>
+        <article class="online-review" role="listitem">
+          <span class="review-stars" aria-label="五星評論">★★★★★</span>
+          <blockquote>「每個學習階段都像在闖關，讓孩子充滿熱情地持續下去，也開始期待銜接下一個課程。」</blockquote>
+          <footer>李建志・Google 評論</footer>
+        </article>
+      </div>
+      <details class="creator-proof">
+        <summary>也曾由親子創作者實際體驗 <span>合作體驗內容・點擊查看文章</span></summary>
+        <div class="creator-links" aria-label="親子創作者合作體驗文章">
+          <a href="https://www.facebook.com/annysimplelife/posts/290124792471389" target="_blank" rel="noopener noreferrer">高妹・Simple Life Wonderland</a>
+          <a href="https://www.facebook.com/eeooa0314/posts/285434679612066" target="_blank" rel="noopener noreferrer">靜怡＆大顆呆</a>
+          <a href="https://www.facebook.com/kimberleynblake/posts/298691501615660" target="_blank" rel="noopener noreferrer">布布媽咪</a>
+          <a href="https://www.facebook.com/vonvonblog/posts/287745959374383" target="_blank" rel="noopener noreferrer">VonVon</a>
+          <a href="https://www.facebook.com/fish7046/posts/5264232573650663" target="_blank" rel="noopener noreferrer">陳瑜・鏞鏞甫甫親子部落格</a>
+          <a href="https://www.facebook.com/kaikai991109/posts/306007837561292" target="_blank" rel="noopener noreferrer">珍太妃旅遊親子生活</a>
+          <a href="https://www.facebook.com/lizlara0301/posts/pfbid0NewC6iuU8QHbcjWjaUQBbAv6PG2yp4x1AKBcXmdvpmVGpBTrD92LtZ6RpMcSPgFal" target="_blank" rel="noopener noreferrer">蘋果 vs 西打欸阿木</a>
+          <a href="https://www.facebook.com/kellyla.tw/posts/pfbid02vXCuDT96RUYZozkTMRTgCnGFuaDvcBW6xsgLiaosSRyXNDzzQjQyVsqqtExdLYmGl" target="_blank" rel="noopener noreferrer">村子裡的凱莉哥</a>
+        </div>
+      </details>
     </div>
 
     <div class="video-rail-head reveal">
