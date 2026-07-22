@@ -287,7 +287,7 @@
       "provider": {
         "@id": "https://orangeapple.co/#organization"
       },
-      "url": "https://orangeapple.co/campaigns/online#courses",
+      "url": "https://orangeapple.co/courses/aibot",
       "educationalLevel": "國小 1–2 年級",
       "teaches": "圖像化程式觀念（序列、迴圈、條件）",
       "inLanguage": "zh-TW",
@@ -317,7 +317,7 @@
       "provider": {
         "@id": "https://orangeapple.co/#organization"
       },
-      "url": "https://orangeapple.co/campaigns/online#courses",
+      "url": "https://orangeapple.co/courses/minecraft",
       "educationalLevel": "國小 3 年級",
       "teaches": "Minecraft 遊戲程式邏輯",
       "inLanguage": "zh-TW",
@@ -348,7 +348,7 @@
       "provider": {
         "@id": "https://orangeapple.co/#organization"
       },
-      "url": "https://orangeapple.co/campaigns/online#courses",
+      "url": "https://orangeapple.co/courses/roblox_ai",
       "educationalLevel": "國小 3 年級以上",
       "teaches": "Roblox 遊戲創作、AI 協作實作",
       "inLanguage": "zh-TW",
@@ -379,7 +379,7 @@
       "provider": {
         "@id": "https://orangeapple.co/#organization"
       },
-      "url": "https://orangeapple.co/campaigns/online#courses",
+      "url": "https://orangeapple.co/courses/scratch-basic",
       "educationalLevel": "國小 4 年級以上",
       "teaches": "Scratch、運算思維、程式邏輯",
       "inLanguage": "zh-TW",
@@ -410,7 +410,7 @@
       "provider": {
         "@id": "https://orangeapple.co/#organization"
       },
-      "url": "https://orangeapple.co/campaigns/online#courses",
+      "url": "https://orangeapple.co/courses/python",
       "educationalLevel": "國小 4 年級以上循序銜接；國中（7 年級以上）無程式基礎可直接入門",
       "teaches": "Python 程式設計",
       "inLanguage": "zh-TW",
@@ -441,7 +441,7 @@
       "provider": {
         "@id": "https://orangeapple.co/#organization"
       },
-      "url": "https://orangeapple.co/campaigns/online#courses",
+      "url": "https://orangeapple.co/courses/javascript",
       "educationalLevel": "國小 4 年級以上循序銜接",
       "teaches": "JavaScript 程式設計",
       "inLanguage": "zh-TW",
@@ -472,7 +472,7 @@
       "provider": {
         "@id": "https://orangeapple.co/#organization"
       },
-      "url": "https://orangeapple.co/campaigns/online#courses",
+      "url": "https://orangeapple.co/courses/apcs",
       "teaches": "APCS 檢定、程式解題",
       "inLanguage": "zh-TW",
       "audience": {
@@ -502,7 +502,7 @@
       "provider": {
         "@id": "https://orangeapple.co/#organization"
       },
-      "url": "https://orangeapple.co/campaigns/online#courses",
+      "url": "https://orangeapple.co/courses/its",
       "teaches": "ITS 國際認證",
       "inLanguage": "zh-TW",
       "audience": {
@@ -532,7 +532,7 @@
       "provider": {
         "@id": "https://orangeapple.co/#organization"
       },
-      "url": "https://orangeapple.co/campaigns/online#courses",
+      "url": "https://orangeapple.co/courses/contestant/",
       "teaches": "程式競賽解題、進階演算法",
       "inLanguage": "zh-TW",
       "audience": {
@@ -562,7 +562,7 @@
       "provider": {
         "@id": "https://orangeapple.co/#organization"
       },
-      "url": "https://orangeapple.co/campaigns/online#courses",
+      "url": "https://orangeapple.co/courses/ai-thinking",
       "teaches": "提示詞設計、問題拆解、創作整合、數位素養",
       "inLanguage": "zh-TW",
       "audience": {
@@ -591,7 +591,7 @@
       "provider": {
         "@id": "https://orangeapple.co/#organization"
       },
-      "url": "https://orangeapple.co/campaigns/online#courses",
+      "url": "https://orangeapple.co/courses/math",
       "teaches": "數學邏輯思維",
       "inLanguage": "zh-TW",
       "audience": {
@@ -1089,13 +1089,16 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 .tag-online-only { background: var(--orange-pale); color: var(--text); }
 .course-group .g-sub { font-size: 0.9rem; color: var(--text-mute); margin: 0 0 20px 21px; }
 .course-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(255px, 1fr)); gap: 18px; }
-.course-card { position: relative; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 24px 22px 20px; box-shadow: var(--shadow-sm); transition: transform .18s ease, box-shadow .18s ease; overflow: hidden; }
+.course-card { position: relative; display: block; background: #fff; color: inherit; text-decoration: none; border: 1px solid var(--line); border-radius: 14px; padding: 24px 48px 20px 22px; box-shadow: var(--shadow-sm); transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; overflow: hidden; }
 .course-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--line); }
+.course-card::after { content: "→"; position: absolute; top: 21px; right: 20px; color: var(--text-mute); font-size: 1.1rem; font-weight: 900; transition: color .18s ease, transform .18s ease; }
 .g-play  .course-card::before { background: var(--orange); }
 .g-elite .course-card::before { background: var(--teal); }
 .g-hack  .course-card::before { background: var(--purple); }
 .g-mod   .course-card::before { background: var(--red); }
-.course-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.course-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(0,105,92,.22); }
+.course-card:hover::after { color: var(--teal-deep); transform: translateX(3px); }
+.course-card:focus-visible { outline: 3px solid rgba(255,163,0,.48); outline-offset: 3px; }
 .course-card h4 { font-size: 1.02rem; font-weight: 900; margin-bottom: 6px; }
 .course-card p { font-size: 0.87rem; color: var(--gray); margin-bottom: 12px; }
 .course-card .meta { font-size: 0.79rem; font-weight: 700; color: var(--text-mute); border-top: 1px dashed var(--line); padding-top: 10px; }
@@ -1399,9 +1402,9 @@ h3 { font-size: 1.1rem; font-weight: 700; }
       <div class="course-group-head"><h3>玩創系列</h3><span class="tag tag-dual">雙師教學</span></div>
       <p class="g-sub">國小低年級起的程式啟蒙——用孩子喜歡的世界當教室，建立序列、迴圈、條件等基礎觀念；各課程適齡見卡片。</p>
       <div class="course-cards">
-        <div class="course-card"><h4>頑皮艾伯特 <span class="tag tag-online-only">僅線上</span></h4><p>幼齡程式啟蒙，遊戲化情境學基礎邏輯。</p><div class="meta">小 1–2・線上 1:6 小班・唯一可用平板</div></div>
-        <div class="course-card"><h4>麥塊教育版</h4><p>在 Minecraft 教育版的世界裡學程式邏輯。</p><div class="meta">小 3・線上 1:7 小班・需自備滑鼠</div></div>
-        <div class="course-card"><h4>Roblox AI 遊戲設計</h4><p>與 AI 協作，打造自己的 Roblox 遊戲世界。</p><div class="meta">小 3 以上・線上 1:7 小班</div></div>
+        <a class="course-card" href="https://orangeapple.co/courses/aibot"><h4>頑皮艾伯特 <span class="tag tag-online-only">僅線上</span></h4><p>幼齡程式啟蒙，遊戲化情境學基礎邏輯。</p><div class="meta">小 1–2・線上 1:6 小班・唯一可用平板</div></a>
+        <a class="course-card" href="https://orangeapple.co/courses/minecraft"><h4>麥塊教育版</h4><p>在 Minecraft 教育版的世界裡學程式邏輯。</p><div class="meta">小 3・線上 1:7 小班・需自備滑鼠</div></a>
+        <a class="course-card" href="https://orangeapple.co/courses/roblox_ai"><h4>Roblox AI 遊戲設計</h4><p>與 AI 協作，打造自己的 Roblox 遊戲世界。</p><div class="meta">小 3 以上・線上 1:7 小班</div></a>
       </div>
     </div>
 
@@ -1409,9 +1412,9 @@ h3 { font-size: 1.1rem; font-weight: 700; }
       <div class="course-group-head"><h3>菁英系列</h3><span class="tag tag-dual">雙師教學</span></div>
       <p class="g-sub">國小 4 年級以上——從圖形化走向文字程式的完整階梯；國中沒有基礎的孩子可直接從 Python 入門。</p>
       <div class="course-cards">
-        <div class="course-card"><h4>Scratch</h4><p>MIT 開發的圖形化程式，培養運算思維與邏輯。</p><div class="meta">線上 1:9 小班・零基礎可起步</div></div>
-        <div class="course-card"><h4>Python</h4><p>從基礎語法到專案實作的文字程式第一步。</p><div class="meta">線上 1:10 小班</div></div>
-        <div class="course-card"><h4>JavaScript</h4><p>網頁互動程式設計，銜接更高階段的進階實作。</p><div class="meta">線上 1:10 小班</div></div>
+        <a class="course-card" href="https://orangeapple.co/courses/scratch-basic"><h4>Scratch</h4><p>MIT 開發的圖形化程式，培養運算思維與邏輯。</p><div class="meta">線上 1:9 小班・零基礎可起步</div></a>
+        <a class="course-card" href="https://orangeapple.co/courses/python"><h4>Python</h4><p>從基礎語法到專案實作的文字程式第一步。</p><div class="meta">線上 1:10 小班</div></a>
+        <a class="course-card" href="https://orangeapple.co/courses/javascript"><h4>JavaScript</h4><p>網頁互動程式設計，銜接更高階段的進階實作。</p><div class="meta">線上 1:10 小班</div></a>
       </div>
     </div>
 
@@ -1419,9 +1422,9 @@ h3 { font-size: 1.1rem; font-weight: 700; }
       <div class="course-group-head"><h3>駭客系列</h3><span class="tag tag-lecture">講師授課＋補課影片</span></div>
       <p class="g-sub">檢定與認證衝刺——以檢定成績與國際認證為目標，為升學備審累積具體成果。</p>
       <div class="course-cards">
-        <div class="course-card"><h4>APCS 檢定班</h4><p>大學程式設計先修檢測衝刺，程式解題訓練。</p><div class="meta">線上班・補課影片</div></div>
-        <div class="course-card"><h4>ITS 國際認證班</h4><p>取得國際認可的資訊能力證明。</p><div class="meta">線上班・補課影片</div></div>
-        <div class="course-card"><h4>程式選手班</h4><p>以競賽為目標的進階培訓，需程度評估。</p><div class="meta">線上 8 人小班・每期含 2 次補課</div></div>
+        <a class="course-card" href="https://orangeapple.co/courses/apcs"><h4>APCS 檢定班</h4><p>大學程式設計先修檢測衝刺，程式解題訓練。</p><div class="meta">線上班・補課影片</div></a>
+        <a class="course-card" href="https://orangeapple.co/courses/its"><h4>ITS 國際認證班</h4><p>取得國際認可的資訊能力證明。</p><div class="meta">線上班・補課影片</div></a>
+        <a class="course-card" href="https://orangeapple.co/courses/contestant/"><h4>程式選手班</h4><p>以競賽為目標的進階培訓，需程度評估。</p><div class="meta">線上 8 人小班・每期含 2 次補課</div></a>
       </div>
     </div>
 
@@ -1429,8 +1432,8 @@ h3 { font-size: 1.1rem; font-weight: 700; }
       <div class="course-group-head"><h3>獨立模組</h3></div>
       <p class="g-sub">不需程式先修——與主線並行的獨立課程，依孩子的興趣與需求單獨報名。</p>
       <div class="course-cards">
-        <div class="course-card"><h4>AI 思維：實戰問題解決課 <span class="tag tag-online-only">僅線上</span></h4><p>提示詞設計、問題拆解與創作整合，AI 時代的數位素養。</p><div class="meta">線上 1:10 小班・講師授課＋補課影片</div></div>
-        <div class="course-card"><h4>麥思數學 <span class="tag tag-online-only">僅線上</span></h4><p>用邏輯思維方法學數學，雙師教學。</p><div class="meta">線上 1:6 小班</div></div>
+        <a class="course-card" href="https://orangeapple.co/courses/ai-thinking"><h4>AI 思維：實戰問題解決課 <span class="tag tag-online-only">僅線上</span></h4><p>提示詞設計、問題拆解與創作整合，AI 時代的數位素養。</p><div class="meta">線上 1:10 小班・講師授課＋補課影片</div></a>
+        <a class="course-card" href="https://orangeapple.co/courses/math"><h4>麥思數學 <span class="tag tag-online-only">僅線上</span></h4><p>用邏輯思維方法學數學，雙師教學。</p><div class="meta">線上 1:6 小班</div></a>
       </div>
     </div>
 
