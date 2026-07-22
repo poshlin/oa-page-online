@@ -466,9 +466,61 @@
     },
     {
       "@type": "Course",
+      "@id": "https://orangeapple.co/campaigns/online#course-html5",
+      "name": "HTML5 網頁程式開發班（線上班）",
+      "description": "橘子蘋果菁英第六階段，從 HTML 與 CSS 建立網頁開發能力，銜接 ITS HTML & CSS 國際認證，採雙師教學、線上 1:10 小班。",
+      "provider": { "@id": "https://orangeapple.co/#organization" },
+      "url": "https://orangeapple.co/courses/html5",
+      "educationalLevel": "完成菁英第五階段後循序銜接",
+      "teaches": "HTML、CSS、網頁程式開發",
+      "inLanguage": "zh-TW",
+      "courseMode": ["onsite", "online"],
+      "hasCourseInstance": { "@type": "CourseInstance", "courseMode": ["online"], "courseSchedule": { "@type": "Schedule", "repeatFrequency": "weekly" } }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://orangeapple.co/campaigns/online#course-database",
+      "name": "網路與資料庫應用班（線上班）",
+      "description": "橘子蘋果菁英第七階段，學習網路應用與資料庫觀念，建立完整軟體開發基礎，採雙師教學、線上 1:10 小班。",
+      "provider": { "@id": "https://orangeapple.co/#organization" },
+      "url": "https://orangeapple.co/courses/database",
+      "educationalLevel": "完成菁英第六階段後循序銜接",
+      "teaches": "網路應用、資料庫",
+      "inLanguage": "zh-TW",
+      "courseMode": ["onsite", "online"],
+      "hasCourseInstance": { "@type": "CourseInstance", "courseMode": ["online"], "courseSchedule": { "@type": "Schedule", "repeatFrequency": "weekly" } }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://orangeapple.co/campaigns/online#course-algorithm",
+      "name": "演算法研究與應用班（線上班）",
+      "description": "橘子蘋果菁英第八階段，培養演算法、進階解題與運算思維能力，並可銜接 ITS 運算思維認證，採雙師教學、線上 1:10 小班。",
+      "provider": { "@id": "https://orangeapple.co/#organization" },
+      "url": "https://orangeapple.co/courses/algorithm",
+      "educationalLevel": "完成菁英第七階段後循序銜接",
+      "teaches": "演算法、進階解題、運算思維",
+      "inLanguage": "zh-TW",
+      "courseMode": ["onsite", "online"],
+      "hasCourseInstance": { "@type": "CourseInstance", "courseMode": ["online"], "courseSchedule": { "@type": "Schedule", "repeatFrequency": "weekly" } }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://orangeapple.co/campaigns/online#course-ai",
+      "name": "AI 人工智慧班（菁英第九階段・線上班）",
+      "description": "橘子蘋果菁英第九階段 AI 人工智慧班，建立 AI 應用與完整程式開發基礎；此課程不同於獨立模組的 AI 思維實戰課。",
+      "provider": { "@id": "https://orangeapple.co/#organization" },
+      "url": "https://orangeapple.co/courses/ai",
+      "educationalLevel": "完成菁英第八階段後循序銜接",
+      "teaches": "AI 人工智慧、程式應用",
+      "inLanguage": "zh-TW",
+      "courseMode": ["onsite", "online"],
+      "hasCourseInstance": { "@type": "CourseInstance", "courseMode": ["online"], "courseSchedule": { "@type": "Schedule", "repeatFrequency": "weekly" } }
+    },
+    {
+      "@type": "Course",
       "@id": "https://orangeapple.co/campaigns/online#course-apcs",
       "name": "APCS 檢定班（線上班）",
-      "description": "橘子蘋果駭客系列 APCS 大學程式設計先修檢測衝刺課程，講師授課並提供補課影片，協助國高中生準備 APCS 檢定與升學備審，報名前可免費試聽。",
+      "description": "橘子蘋果駭客系列 APCS 大學程式設計先修檢測衝刺課程，講師授課並提供補課影片，協助國高中生準備 APCS 檢定與升學備審，由顧問依孩子背景說明入班方式。",
       "provider": {
         "@id": "https://orangeapple.co/#organization"
       },
@@ -498,7 +550,7 @@
       "@type": "Course",
       "@id": "https://orangeapple.co/campaigns/online#course-its",
       "name": "ITS 國際認證班（線上班）",
-      "description": "橘子蘋果駭客系列 ITS（Information Technology Specialist）國際認證課程，講師授課並提供補課影片，取得國際認可的資訊能力證明，報名前可免費試聽。",
+      "description": "橘子蘋果駭客系列 ITS（Information Technology Specialist）國際認證課程，講師授課並提供補課影片，取得國際認可的資訊能力證明，由顧問依孩子背景說明入班方式。",
       "provider": {
         "@id": "https://orangeapple.co/#organization"
       },
@@ -558,7 +610,7 @@
       "@type": "Course",
       "@id": "https://orangeapple.co/campaigns/online#course-ai-thinking",
       "name": "AI 思維：實戰問題解決課（線上）",
-      "description": "橘子蘋果獨立模組課程，培養提示詞設計、問題拆解與創作整合等 AI 時代的數位素養，講師授課並提供補課影片，線上 1:10 小班，報名前可免費試聽。",
+      "description": "橘子蘋果獨立模組課程，培養提示詞設計、問題拆解與創作整合等 AI 時代的數位素養，講師授課並提供補課影片，線上 1:10 小班，由顧問依孩子背景說明入班方式。",
       "provider": {
         "@id": "https://orangeapple.co/#organization"
       },
@@ -1100,15 +1152,27 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 .course-group .g-sub { font-size: 0.9rem; color: var(--text-mute); margin: 0 0 20px 21px; }
 .course-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .course-group.g-mod .course-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 920px; margin-inline: auto; }
+.elite-track { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; counter-reset: elite-stage; }
+.elite-stage { position: relative; min-height: 92px; padding: 18px 44px 17px 56px; display: flex; flex-direction: column; justify-content: center; border: 1px solid rgba(0,105,92,.16); border-radius: 14px; background: #fff; color: var(--text); text-decoration: none; box-shadow: var(--shadow-sm); transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+.elite-stage::after { content: "→"; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: var(--text-mute); font-weight: 900; }
+.elite-stage:hover { transform: translateY(-3px); border-color: rgba(0,105,92,.32); box-shadow: var(--shadow-md); }
+.elite-stage:hover::after { color: var(--teal-deep); }
+.elite-stage:focus-visible { outline: 3px solid rgba(255,163,0,.48); outline-offset: 3px; }
+.elite-stage .stage-no { position: absolute; left: 16px; top: 17px; color: var(--teal-deep); font-family: 'JetBrains Mono','SF Mono',Consolas,monospace; font-size: .74rem; font-weight: 900; }
+.elite-stage strong { font-size: .9rem; font-weight: 900; line-height: 1.45; }
+.elite-stage small { width: max-content; margin-top: 5px; padding: 2px 8px; border-radius: 999px; background: var(--orange-50); color: var(--text); font-size: .65rem; font-weight: 800; }
+.outcome-note { margin: 14px 0 0 21px; color: var(--text-mute); font-size: .8rem; }
 @media (max-width: 820px) {
   .course-intro { grid-template-columns: 1fr; }
   .course-cards { grid-template-columns: 1fr 1fr; }
   .course-group.g-mod .course-cards { grid-template-columns: 1fr 1fr; }
+  .elite-track { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 560px) {
   .course-route { align-items: flex-start; flex-direction: column; gap: 5px; }
   .course-cards,
   .course-group.g-mod .course-cards { grid-template-columns: 1fr; }
+  .elite-track { grid-template-columns: 1fr; }
 }
 .course-card { position: relative; display: block; background: #fff; color: inherit; text-decoration: none; border: 1px solid var(--line); border-radius: 14px; padding: 24px 48px 20px 22px; box-shadow: var(--shadow-sm); transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; overflow: hidden; }
 .course-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--line); }
@@ -1431,13 +1495,13 @@ h3 { font-size: 1.1rem; font-weight: 700; }
       <h2>從啟蒙到升學，線上都有完整路徑</h2>
       <p class="lead">孩子可以從興趣啟蒙一路銜接進階檢定與競賽，也能依自己的學習需求選擇獨立課程。</p>
       <div class="course-intro">
-        <div class="course-route"><span>完整學習主線</span><strong>玩創 → 菁英 → 駭客 → 選手班</strong></div>
-        <p class="course-intro-note">以下課程皆開設線上班；AI 思維、麥思數學等部分課程僅在線上開課。</p>
+        <div class="course-route"><span>完整學習路徑</span><strong>探索入口 → 菁英九階段 → 成果出口</strong></div>
+        <p class="course-intro-note">依年級與程度找到起點，再依升學、認證或競賽目標選擇出口；部分課程僅在線上開課。</p>
       </div>
     </div>
 
     <div class="course-group g-play reveal">
-      <div class="course-group-head"><h3>玩創系列</h3><span class="tag tag-dual">雙師教學</span></div>
+      <div class="course-group-head"><h3>探索入口・玩創系列</h3><span class="tag tag-dual">雙師教學</span></div>
       <p class="g-sub">國小低年級起的程式啟蒙——用孩子喜歡的世界當教室，建立序列、迴圈、條件等基礎觀念；各課程適齡見卡片。</p>
       <div class="course-cards">
         <a class="course-card" href="https://orangeapple.co/courses/aibot"><h4>頑皮艾伯特 <span class="tag tag-online-only">僅線上</span></h4><p>幼齡程式啟蒙，遊戲化情境學基礎邏輯。</p><div class="meta">小 1–2・線上 1:6 小班・唯一可用平板</div></a>
@@ -1447,31 +1511,38 @@ h3 { font-size: 1.1rem; font-weight: 700; }
     </div>
 
     <div class="course-group g-elite reveal">
-      <div class="course-group-head"><h3>菁英系列</h3><span class="tag tag-dual">雙師教學</span></div>
-      <p class="g-sub">國小 4 年級以上——從圖形化走向文字程式的完整階梯；國中沒有基礎的孩子可直接從 Python 入門。</p>
-      <div class="course-cards">
-        <a class="course-card" href="https://orangeapple.co/courses/scratch-basic"><h4>Scratch</h4><p>MIT 開發的圖形化程式，培養運算思維與邏輯。</p><div class="meta">線上 1:9 小班・零基礎可起步</div></a>
-        <a class="course-card" href="https://orangeapple.co/courses/python"><h4>Python</h4><p>從基礎語法到專案實作的文字程式第一步。</p><div class="meta">線上 1:10 小班</div></a>
-        <a class="course-card" href="https://orangeapple.co/courses/javascript"><h4>JavaScript</h4><p>網頁互動程式設計，銜接更高階段的進階實作。</p><div class="meta">線上 1:10 小班</div></a>
+      <div class="course-group-head"><h3>菁英九階段主幹</h3><span class="tag tag-dual">4 年級以上・雙師教學</span></div>
+      <p class="g-sub">從 Scratch 到 AI 的九階一條龍；國中零基礎可直接從 Python 入門，8 年級以上也可依程度從 JavaScript 起步。</p>
+      <div class="elite-track" aria-label="菁英九階段完整課程路徑">
+        <a class="elite-stage" href="https://orangeapple.co/courses/scratch-basic"><span class="stage-no">01</span><strong>Scratch 程式觀念</strong></a>
+        <a class="elite-stage" href="https://orangeapple.co/courses/scratch-basic"><span class="stage-no">02</span><strong>Scratch 運算思維</strong></a>
+        <a class="elite-stage" href="https://orangeapple.co/courses/python"><span class="stage-no">03</span><strong>Python 初階</strong></a>
+        <a class="elite-stage" href="https://orangeapple.co/courses/python"><span class="stage-no">04</span><strong>Python 進階</strong><small>ITS Python 銜接點</small></a>
+        <a class="elite-stage" href="https://orangeapple.co/courses/javascript"><span class="stage-no">05</span><strong>JavaScript</strong><small>ITS JavaScript 銜接點</small></a>
+        <a class="elite-stage" href="https://orangeapple.co/courses/html5"><span class="stage-no">06</span><strong>HTML/CSS</strong><small>ITS HTML/CSS 銜接點</small></a>
+        <a class="elite-stage" href="https://orangeapple.co/courses/database"><span class="stage-no">07</span><strong>網路與資料庫</strong></a>
+        <a class="elite-stage" href="https://orangeapple.co/courses/algorithm"><span class="stage-no">08</span><strong>演算法開發</strong><small>ITS 運算思維銜接點</small></a>
+        <a class="elite-stage" href="https://orangeapple.co/courses/ai"><span class="stage-no">09</span><strong>AI 人工智慧</strong></a>
       </div>
     </div>
 
     <div class="course-group g-hack reveal">
-      <div class="course-group-head"><h3>駭客系列</h3><span class="tag tag-lecture">講師授課＋補課影片</span></div>
-      <p class="g-sub">檢定與認證衝刺——以檢定成績與國際認證為目標，為升學備審累積具體成果。</p>
+      <div class="course-group-head"><h3>成果出口</h3><span class="tag tag-lecture">依目標選擇・不是固定順序</span></div>
+      <p class="g-sub">完整打底後，再依孩子的年級、程度與目標，選擇國際認證、升學檢定或競賽訓練。</p>
       <div class="course-cards">
-        <a class="course-card" href="https://orangeapple.co/courses/apcs"><h4>APCS 檢定班</h4><p>大學程式設計先修檢測衝刺，程式解題訓練。</p><div class="meta">線上班・補課影片</div></a>
-        <a class="course-card" href="https://orangeapple.co/courses/its"><h4>ITS 國際認證班</h4><p>取得國際認可的資訊能力證明。</p><div class="meta">線上班・補課影片</div></a>
-        <a class="course-card" href="https://orangeapple.co/courses/contestant/"><h4>程式選手班</h4><p>以競賽為目標的進階培訓，需程度評估。</p><div class="meta">線上 8 人小班・每期含 2 次補課</div></a>
+        <a class="course-card" href="https://orangeapple.co/courses/its"><h4>ITS 國際認證</h4><p>把 Python、JavaScript、HTML/CSS 與運算思維能力，轉化為國際證照。</p><div class="meta">認證出口・講師授課＋補課影片</div></a>
+        <a class="course-card" href="https://orangeapple.co/courses/apcs"><h4>APCS 升學檢定</h4><p>把語法、演算法與解題能力，轉化為升學可被看見的成績。</p><div class="meta">升學出口・講師授課＋補課影片</div></a>
+        <a class="course-card" href="https://orangeapple.co/courses/contestant/"><h4>選手班與競賽訓練</h4><p>持續進入解題、演算法與實戰訓練，追求更高級分或競賽表現。</p><div class="meta">競賽出口・8 人小班・需程度評估</div></a>
       </div>
+      <p class="outcome-note">三種出口可依目標個別選擇，不代表每位孩子都要依序修讀。</p>
     </div>
 
     <div class="course-group g-mod reveal">
-      <div class="course-group-head"><h3>獨立模組</h3></div>
-      <p class="g-sub">不需程式先修——與主線並行的獨立課程，依孩子的興趣與需求單獨報名。</p>
+      <div class="course-group-head"><h3>能力補強線</h3><span class="tag tag-online-only">可與主幹並行・選配</span></div>
+      <p class="g-sub">不需依照九階段順序修讀，可依孩子的興趣與需求單獨選擇。</p>
       <div class="course-cards">
-        <a class="course-card" href="https://orangeapple.co/courses/ai-thinking"><h4>AI 思維：實戰問題解決課 <span class="tag tag-online-only">僅線上</span></h4><p>提示詞設計、問題拆解與創作整合，AI 時代的數位素養。</p><div class="meta">線上 1:10 小班・講師授課＋補課影片</div></a>
         <a class="course-card" href="https://orangeapple.co/courses/math"><h4>麥思數學 <span class="tag tag-online-only">僅線上</span></h4><p>用邏輯思維方法學數學，雙師教學。</p><div class="meta">線上 1:6 小班</div></a>
+        <a class="course-card" href="https://orangeapple.co/courses/ai-thinking"><h4>AI 思維：實戰問題解決課 <span class="tag tag-online-only">僅線上</span></h4><p>提示詞設計、問題拆解與創作整合，AI 時代的數位素養。</p><div class="meta">線上 1:10 小班・講師授課＋補課影片</div></a>
       </div>
     </div>
 
