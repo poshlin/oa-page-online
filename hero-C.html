@@ -1067,7 +1067,7 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 .cmp-card.is-online li { color: var(--gray); }
 .cmp-card.is-onsite li { color: var(--gray); border-bottom-color: rgba(0,0,0,.08); }
 .cmp-card li:last-child { border-bottom: none; }
-.cmp-card li::before { content: "✓"; position: absolute; left: 2px; font-weight: 900; }
+.cmp-card li::before { content: "▸"; position: absolute; left: 2px; font-weight: 900; }
 .cmp-card.is-online li::before { color: var(--teal-dark); }
 .cmp-card.is-onsite li::before { color: var(--orange); }
 .cmp-same { margin-top: 18px; text-align: center; background: rgba(255,255,255,.78); border: 1px dashed rgba(0,105,92,.28); border-radius: 12px; padding: 14px 20px; font-size: 0.92rem; color: var(--gray); }
@@ -1221,15 +1221,12 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 .sec-final .lead .lead-promise { color: #fff; font-size: 1.08em; font-weight: 800; }
 .final-points { list-style: none; display: flex; justify-content: center; gap: 12px 30px; flex-wrap: wrap; margin-bottom: 38px; }
 .final-points li { font-size: 0.92rem; color: rgba(255,255,255,0.85); }
-.final-points li::before { content: "✓"; color: var(--teal); font-weight: 900; margin-right: 7px; }
+.final-points li::before { content: "▸"; color: var(--teal); font-weight: 900; margin-right: 8px; }
 .final-contact { margin-top: 32px; font-size: 0.88rem; color: rgba(255,255,255,0.78); }
 .final-contact a { color: #fff; font-weight: 700; text-decoration: none; }
 .final-contact a:hover { text-decoration: underline; }
 .sec-final .btn-secondary { background: transparent; color: #fff; border-color: rgba(255,255,255,0.7); margin-left: 14px; }
 .sec-final .btn-secondary:hover { background: rgba(255,255,255,0.1); color: #fff; }
-.kdding-flag { position: absolute; right: -8px; bottom: -66px; width: 96px; opacity: 0.95; animation: floaty 6s ease-in-out infinite; }
-@media (max-width: 700px) { .kdding-flag { display: none; } }
-
 /* ---------- Sticky CTA ---------- */
 .sticky-cta {
   position: fixed; left: 50%; transform: translateX(-50%) translateY(20px); bottom: 18px; z-index: 90;
@@ -1661,7 +1658,6 @@ h3 { font-size: 1.1rem; font-weight: 700; }
       <a class="btn-secondary" href="https://line.me/R/ti/p/%40qcr5001z" rel="noopener">LINE 官方帳號諮詢</a>
       <p class="final-contact">或直接來電：<a href="tel:0277098229">(02) 7709-8229</a>（線上課程專線 週一至週五 13:00–21:00／週六日 10:00–17:00）</p>
     </div>
-    <img class="kdding-flag" src="assets/kdding-flag.png" alt="橘子蘋果吉祥物叩叮的旗子" width="295" height="349" loading="lazy">
   </div>
 </section>
 
@@ -1729,15 +1725,18 @@ h3 { font-size: 1.1rem; font-weight: 700; }
     counters.forEach(runCount);
   }
 
-  // Sticky CTA：滑過 hero 才出現
+  // Sticky CTA：滑過 hero 才出現；進入頁尾 CTA 前淡出，避免遮住內容與按鈕。
   var sticky = document.querySelector('.sticky-cta');
   var hero = document.querySelector('.hero');
+  var finalSection = document.querySelector('.sec-final');
   if (sticky && hero) {
     var onScroll = function () {
       var past = window.scrollY > hero.offsetTop + hero.offsetHeight;
-      sticky.classList.toggle('show', past);
+      var finalReached = finalSection && finalSection.getBoundingClientRect().top < window.innerHeight - 24;
+      sticky.classList.toggle('show', past && !finalReached);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
     onScroll();
   }
 
