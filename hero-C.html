@@ -1031,41 +1031,41 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 .concern .chip { display: inline-block; font-size: 0.8rem; font-weight: 700; color: var(--teal-deep); background: var(--teal-pale); border-radius: 999px; padding: 4px 14px; }
 .concern-idx { font-size: 0.78rem; font-weight: 900; letter-spacing: 0.16em; color: var(--text-mute); margin-bottom: 8px; }
 
-/* ---------- 02 雙師 ---------- */
-.sec-dual { background: var(--ink); color: #fff; }
-.sec-dual .sec-label { color: var(--teal); }
+/* ---------- 02 雙師：低壓、專注的線上學習氛圍 ---------- */
+.sec-dual { color: var(--text); background: radial-gradient(560px 360px at 8% 10%, rgba(0,196,179,.13), transparent 68%), radial-gradient(520px 320px at 92% 42%, rgba(255,163,0,.10), transparent 70%), linear-gradient(180deg,#F1FBF9 0%,#FFFDF8 58%,#F7FBFA 100%); }
+.sec-dual .sec-label { color: var(--teal-deep); }
 .sec-dual .sec-label::before { background: var(--teal); }
-.sec-dual h2 { color: #fff; }
-.sec-dual .lead { color: rgba(255,255,255,0.72); }
+.sec-dual h2 { color: var(--text); }
+.sec-dual .lead { color: var(--gray); }
 .dual-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 48px 0 30px; position: relative; }
 @media (max-width: 900px) { .dual-steps { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .dual-steps { grid-template-columns: 1fr; } }
-.dual-step { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius); padding: 26px 24px; }
+.dual-step { background: rgba(255,255,255,.9); border: 1px solid rgba(0,105,92,.13); border-radius: var(--radius); padding: 26px 24px; box-shadow: var(--shadow-sm); }
 .dual-step .no { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: var(--orange); color: var(--text); font-weight: 900; margin-bottom: 14px; font-size: 1.05rem; }
-.dual-step h3 { margin-bottom: 8px; color: #fff; }
-.dual-step p { font-size: 0.88rem; color: rgba(255,255,255,0.82); }
-.dual-note { font-size: 0.88rem; color: rgba(255,255,255,0.78); border-left: 3px solid rgba(255,255,255,0.25); padding-left: 16px; margin-bottom: 58px; max-width: 46em; }
+.dual-step h3 { margin-bottom: 8px; color: var(--teal-deep); }
+.dual-step p { font-size: 0.88rem; color: var(--gray); }
+.dual-note { max-width: 48em; margin-bottom: 58px; padding: 14px 17px; border: 1px solid var(--line); border-left: 4px solid var(--teal); border-radius: 0 12px 12px 0; background: rgba(255,255,255,.72); color: var(--gray); font-size: 0.82rem; line-height: 1.65; }
 .compare-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 40px; }
 @media (max-width: 760px) { .compare-cards { grid-template-columns: 1fr; } }
-.cmp-card { border-radius: var(--radius); padding: 30px 30px 26px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); }
-.cmp-card.is-online { background: #fff; color: var(--text); border: none; box-shadow: var(--shadow-lg); }
+.cmp-card { border-radius: var(--radius); padding: 30px 30px 26px; background: rgba(255,255,255,.82); border: 1px solid var(--line); box-shadow: var(--shadow-sm); }
+.cmp-card.is-online { background: var(--teal-pale); color: var(--text); border-color: rgba(0,105,92,.18); box-shadow: var(--shadow-md); }
 .cmp-card .cmp-tag { display: inline-block; font-size: 0.78rem; font-weight: 900; letter-spacing: 0.12em; border-radius: 999px; padding: 4px 14px; margin-bottom: 14px; }
 .cmp-card.is-online .cmp-tag { background: var(--teal-pale); color: var(--teal-deep); }
-.cmp-card.is-onsite .cmp-tag { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.92); }
+.cmp-card.is-onsite .cmp-tag { background: var(--orange-50); color: var(--text); }
 .cmp-card h3 { font-size: 1.3rem; font-weight: 900; margin-bottom: 16px; }
-.cmp-card.is-onsite h3 { color: #fff; }
+.cmp-card.is-onsite h3 { color: var(--text); }
 .cmp-card ul { list-style: none; }
 .cmp-card li { font-size: 0.93rem; padding: 9px 0 9px 28px; position: relative; border-bottom: 1px dashed rgba(0,0,0,0.08); }
 .cmp-card.is-online li { color: var(--gray); }
-.cmp-card.is-onsite li { color: rgba(255,255,255,0.86); border-bottom-color: rgba(255,255,255,0.1); }
+.cmp-card.is-onsite li { color: var(--gray); border-bottom-color: rgba(0,0,0,.08); }
 .cmp-card li:last-child { border-bottom: none; }
 .cmp-card li::before { content: "✓"; position: absolute; left: 2px; font-weight: 900; }
 .cmp-card.is-online li::before { color: var(--teal-dark); }
-.cmp-card.is-onsite li::before { color: rgba(255,255,255,0.45); }
-.cmp-same { margin-top: 18px; text-align: center; background: rgba(255,255,255,0.07); border: 1px dashed rgba(255,255,255,0.25); border-radius: 12px; padding: 14px 20px; font-size: 0.92rem; color: rgba(255,255,255,0.8); }
-.cmp-same strong { color: #fff; }
-.region-note { margin-top: 26px; font-size: 0.92rem; color: rgba(255,255,255,0.75); }
-.region-note a { color: var(--teal); font-weight: 700; text-decoration: none; }
+.cmp-card.is-onsite li::before { color: var(--orange); }
+.cmp-same { margin-top: 18px; text-align: center; background: rgba(255,255,255,.78); border: 1px dashed rgba(0,105,92,.28); border-radius: 12px; padding: 14px 20px; font-size: 0.92rem; color: var(--gray); }
+.cmp-same strong { color: var(--teal-deep); }
+.region-note { margin-top: 26px; font-size: 0.92rem; color: var(--gray); }
+.region-note a { color: var(--teal-deep); font-weight: 700; text-decoration: none; }
 .region-note a:hover { text-decoration: underline; }
 
 /* ---------- 03 課程 ---------- */
@@ -1335,14 +1335,14 @@ h3 { font-size: 1.1rem; font-weight: 700; }
   <div class="container">
     <div class="sec-head reveal">
       <p class="sec-label">02・為什麼有效</p>
-      <h2>雙師教學：一堂線上課實際長這樣</h2>
-      <p class="lead" id="dual-teacher-answer">橘子蘋果程式學苑的線上課程採「雙師教學」：影片講師提供可重複觀看的標準化教學，真人輔導老師會巡看孩子的螢幕；孩子卡住按「我要發問」，老師依序一對一連線、看著螢幕引導孩子自己找出錯誤。此模式適用於玩創系列、菁英系列與麥思數學。</p>
+      <h2>少一點干擾，多一點專注與成就感</h2>
+      <p class="lead" id="dual-teacher-answer">在家上課，少了教室走動與同學互相干擾，孩子能把注意力留在螢幕和自己的作品上。影片講師提供可重複觀看的標準化教學，真人輔導老師巡看孩子的螢幕；卡住按「我要發問」，老師依序一對一連線，引導孩子自己找出錯誤。這就是橘子蘋果的雙師教學。</p>
     </div>
     <div class="dual-steps">
-      <div class="dual-step reveal"><span class="no">1</span><h3>看影片講解</h3><p>影片講師示範觀念與作法。聽不懂？倒回去再看一次，不用怕跟不上進度。</p></div>
-      <div class="dual-step reveal reveal-d1"><span class="no">2</span><h3>動手實作</h3><p>每堂課都有要完成的專案進度，孩子邊做邊學，不是被動聽講。</p></div>
-      <div class="dual-step reveal reveal-d2"><span class="no">3</span><h3>卡關按「我要發問」</h3><p>老師會巡看孩子的螢幕；孩子卡住按「我要發問」，依序一對一連線引導、帶他自己找出錯誤——排隊時先繼續看影片，不空等。</p></div>
-      <div class="dual-step reveal reveal-d3"><span class="no">4</span><h3>帶著作品下課</h3><p>完成當堂專案，孩子帶著「我做出來了」的成就感下課，這是持續學下去的動力。</p></div>
+      <div class="dual-step reveal"><span class="no">1</span><h3>安心跟著看</h3><p>影片講師一步步示範；沒聽懂就倒回去再看，不怕被同學的進度催著走。</p></div>
+      <div class="dual-step reveal reveal-d1"><span class="no">2</span><h3>專心自己做</h3><p>孩子照自己的節奏動手完成專案，把注意力留在螢幕和作品上，不被旁邊打斷。</p></div>
+      <div class="dual-step reveal reveal-d2"><span class="no">3</span><h3>有問題就問老師</h3><p>卡住按「我要發問」，等待時繼續看影片；真人老師依序一對一進來引導。</p></div>
+      <div class="dual-step reveal reveal-d3"><span class="no">4</span><h3>帶著成就感下課</h3><p>完成當堂作品，孩子看見自己真的做出來了，帶著期待繼續下一堂課。</p></div>
     </div>
     <p class="dual-note">誠實說明：APCS、ITS 檢定班與 AI 思維課採講師授課模式（非雙師），並提供補課影片；免費試聽時顧問會說明各課程的上課方式。</p>
 
