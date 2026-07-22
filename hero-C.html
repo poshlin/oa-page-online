@@ -1044,7 +1044,14 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 .dual-step .no { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: var(--orange); color: var(--text); font-weight: 900; margin-bottom: 14px; font-size: 1.05rem; }
 .dual-step h3 { margin-bottom: 8px; color: var(--teal-deep); }
 .dual-step p { font-size: 0.88rem; color: var(--gray); }
-.dual-note { max-width: 48em; margin-bottom: 58px; padding: 14px 17px; border: 1px solid var(--line); border-left: 4px solid var(--teal); border-radius: 0 12px 12px 0; background: rgba(255,255,255,.72); color: var(--gray); font-size: 0.82rem; line-height: 1.65; }
+.dual-note { max-width: 920px; margin: 0 auto 64px; padding: 18px 20px; display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 18px; border: 1px solid rgba(255,163,0,.28); border-radius: 16px; background: linear-gradient(135deg, var(--orange-50), rgba(255,255,255,.92)); box-shadow: var(--shadow-sm); }
+.dual-note-label { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: 7px 15px; border-radius: 999px; background: var(--orange); color: var(--text); font-size: .78rem; font-weight: 900; letter-spacing: .08em; white-space: nowrap; }
+.dual-note p { margin: 0; color: var(--gray); font-size: .84rem; line-height: 1.7; }
+.dual-note strong { color: var(--text); font-weight: 900; }
+@media (max-width: 640px) {
+  .dual-note { grid-template-columns: 1fr; gap: 10px; padding: 17px; }
+  .dual-note-label { justify-self: start; }
+}
 .compare-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 40px; }
 @media (max-width: 760px) { .compare-cards { grid-template-columns: 1fr; } }
 .cmp-card { border-radius: var(--radius); padding: 30px 30px 26px; background: rgba(255,255,255,.82); border: 1px solid var(--line); box-shadow: var(--shadow-sm); }
@@ -1344,7 +1351,10 @@ h3 { font-size: 1.1rem; font-weight: 700; }
       <div class="dual-step reveal reveal-d2"><span class="no">3</span><h3>有問題就問老師</h3><p>卡住按「我要發問」，等待時繼續看影片；真人老師依序一對一進來引導。</p></div>
       <div class="dual-step reveal reveal-d3"><span class="no">4</span><h3>帶著成就感下課</h3><p>完成當堂作品，孩子看見自己真的做出來了，帶著期待繼續下一堂課。</p></div>
     </div>
-    <p class="dual-note">誠實說明：APCS、ITS 檢定班與 AI 思維課採講師授課模式（非雙師），並提供補課影片；免費試聽時顧問會說明各課程的上課方式。</p>
+    <aside class="dual-note" aria-label="課程方式提醒">
+      <span class="dual-note-label">課程方式提醒</span>
+      <p><strong>APCS、ITS 檢定班與 AI 思維課</strong>採講師授課模式（非雙師），並提供補課影片。免費試聽時，顧問會依孩子選擇的課程說明上課方式。</p>
+    </aside>
 
     <div class="sec-head reveal">
       <h2>線上班與實體班，差在哪？</h2>
