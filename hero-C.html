@@ -950,8 +950,9 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 .hero-c .hero-proof .item strong { font-size: 1.42rem; }
 .hero-c-visual { position: relative; padding: 18px 0 34px 18px; }
 .hero-c-visual::before { content: ""; position: absolute; left: 0; top: 0; width: 44%; height: 64%; border: 2px solid rgba(255,163,0,.68); border-radius: 24px; }
-.hero-c-film { position: relative; z-index: 1; aspect-ratio: 16/10; overflow: hidden; border-radius: 24px; background: #12151E url('assets/hero-c-online-poster.jpg') center/cover no-repeat; box-shadow: 0 24px 58px rgba(18,21,30,.18); }
-.hero-c-film video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.hero-c-film { position: relative; z-index: 1; aspect-ratio: 16/10; overflow: hidden; border-radius: 24px; background: #12151E url('assets/hero-c-online-poster.jpg?v=20260722-6') center/cover no-repeat; box-shadow: 0 24px 58px rgba(18,21,30,.18); }
+.hero-c-film video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity .28s ease; }
+.hero-c-film video.is-ready { opacity: 1; }
 .hero-c-film::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg,rgba(8,11,16,.38),transparent 26%,transparent 63%,rgba(8,11,16,.82)); }
 .film-head { position: absolute; z-index: 2; left: 18px; right: 18px; top: 16px; display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,.9); font-family: 'JetBrains Mono','SF Mono',Consolas,monospace; font-size: .66rem; font-weight: 700; letter-spacing: .1em; }
 .film-head .live { display: inline-flex; align-items: center; gap: 7px; }
@@ -1203,7 +1204,7 @@ h3 { font-size: 1.1rem; font-weight: 700; }
       </div>
       <div class="hero-c-visual">
         <div class="hero-c-film" role="img" aria-label="橘子蘋果線上課真實畫面：孩子在家操作 Scratch，真人老師查看學生畫面並一對一引導">
-          <video muted loop playsinline preload="none" poster="assets/hero-c-online-poster.jpg?v=20260722-5"
+          <video muted loop playsinline preload="none" poster="assets/hero-c-online-poster.jpg?v=20260722-6"
                  data-webm="assets/hero-c-online.webm?v=20260722-5"
                  data-mp4="assets/hero-c-online.mp4?v=20260722-5" aria-hidden="true"></video>
           <div class="film-head" aria-hidden="true">
@@ -1683,6 +1684,7 @@ h3 { font-size: 1.1rem; font-weight: 700; }
   }
   video.addEventListener('timeupdate', updateScene);
   video.addEventListener('seeked', updateScene);
+  video.addEventListener('playing', function () { video.classList.add('is-ready'); }, { once: true });
 
   function loadHeroVideo() {
     if (video.dataset.loaded === 'true') return;
