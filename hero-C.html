@@ -241,9 +241,17 @@
       "isPartOf": {
         "@id": "https://orangeapple.co/#website"
       },
-      "about": {
-        "@id": "https://orangeapple.co/#organization"
-      },
+      "about": [
+        {
+          "@id": "https://orangeapple.co/#organization"
+        },
+        {
+          "@type": "Thing",
+          "@id": "https://orangeapple.co/campaigns/online#online-program",
+          "name": "橘子蘋果線上程式課程",
+          "description": "橘子蘋果線上程式課程自 2019 年開始持續打磨，採影片講師搭配真人輔導老師的雙師制教學。"
+        }
+      ],
       "inLanguage": "zh-TW",
       "speakable": {
         "@type": "SpeakableSpecification",
@@ -1000,6 +1008,15 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 .sec-concerns { background: #fff; }
 .sec-concerns .concerns-intro { max-width: 42rem; display: grid; gap: 5px; line-height: 1.8; }
 .sec-concerns .concerns-intro span { display: block; }
+.online-tenure { width: min(100%, 42rem); margin-top: 22px; padding: 15px 18px; display: grid; grid-template-columns: auto 28px 1fr; align-items: center; gap: 12px; border: 1px solid rgba(255,163,0,.34); border-radius: 16px; background: var(--orange-50); box-shadow: var(--shadow-sm); }
+.online-tenure .start-year { padding: 8px 13px; border-radius: 11px; background: var(--orange); color: var(--text); font-size: .78rem; font-weight: 900; text-align: center; line-height: 1.25; }
+.online-tenure .tenure-arrow { color: var(--teal-deep); font-size: 1.15rem; font-weight: 900; text-align: center; }
+.online-tenure .tenure-copy { display: flex; flex-direction: column; gap: 2px; }
+.online-tenure .tenure-copy strong { color: var(--teal-deep); font-size: .92rem; }
+.online-tenure .tenure-copy small { color: var(--gray); font-size: .72rem; font-weight: 700; line-height: 1.5; }
+@media (max-width: 560px) {
+  .online-tenure { grid-template-columns: auto 22px 1fr; padding: 13px; gap: 9px; }
+}
 .concern-list { margin-top: 44px; display: flex; flex-direction: column; gap: 26px; }
 .concern { display: grid; grid-template-columns: minmax(240px, 0.9fr) 1.4fr; gap: 20px 32px; align-items: start; }
 @media (max-width: 860px) { .concern { grid-template-columns: 1fr; gap: 12px; } }
@@ -1241,6 +1258,11 @@ h3 { font-size: 1.1rem; font-weight: 700; }
       <p class="sec-label">01・直球回答</p>
       <h2>爸媽對線上課的 5 個擔心，<br>我們直接回答</h2>
       <p class="lead concerns-intro"><span>對線上課有疑慮很正常。疫情那幾年，大家都看過孩子「掛在鏡頭前放空」。</span><span>橘子蘋果的線上課從 2019 年開始打磨，就是為了解決這些問題。</span></p>
+      <div class="online-tenure" aria-label="橘子蘋果線上課程自 2019 年開始，已有 7 年線上教學實戰">
+        <span class="start-year">2019<br>開始</span>
+        <span class="tenure-arrow" aria-hidden="true">→</span>
+        <span class="tenure-copy"><strong><span data-online-years data-start-year="2019">7</span> 年線上教學實戰</strong><small>不是疫情期間臨時轉線上，而是持續打磨至今</small></span>
+      </div>
     </div>
     <div class="concern-list">
 
@@ -1591,6 +1613,15 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 <script>
 (function () {
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // 線上班年資：以 2019 為固定起始年，每年自動更新顯示數字與無障礙標籤。
+  document.querySelectorAll('[data-online-years]').forEach(function (el) {
+    var startYear = Number(el.getAttribute('data-start-year')) || 2019;
+    var years = Math.max(1, new Date().getFullYear() - startYear);
+    el.textContent = String(years);
+    var card = el.closest('.online-tenure');
+    if (card) card.setAttribute('aria-label', '橘子蘋果線上課程自 ' + startYear + ' 年開始，已有 ' + years + ' 年線上教學實戰');
+  });
 
   // 進場動畫
   var revealEls = document.querySelectorAll('.reveal');
