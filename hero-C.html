@@ -1061,14 +1061,31 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 .sec-concerns { background: #fff; }
 .sec-concerns .concerns-intro { max-width: 42rem; display: grid; gap: 5px; line-height: 1.8; }
 .sec-concerns .concerns-intro span { display: block; }
-.online-tenure { width: min(100%, 42rem); margin-top: 22px; padding: 15px 18px; display: grid; grid-template-columns: auto 28px 1fr; align-items: center; gap: 12px; border: 1px solid rgba(255,163,0,.34); border-radius: 16px; background: var(--orange-50); box-shadow: var(--shadow-sm); }
-.online-tenure .start-year { padding: 8px 13px; border-radius: 11px; background: var(--orange); color: var(--text); font-size: .78rem; font-weight: 900; text-align: center; line-height: 1.25; }
-.online-tenure .tenure-arrow { color: var(--teal-deep); font-size: 1.15rem; font-weight: 900; text-align: center; }
-.online-tenure .tenure-copy { display: flex; flex-direction: column; gap: 2px; }
-.online-tenure .tenure-copy strong { color: var(--teal-deep); font-size: .92rem; }
-.online-tenure .tenure-copy small { color: var(--gray); font-size: .72rem; font-weight: 700; line-height: 1.5; }
+.online-tenure { position: relative; width: min(100%, 48rem); margin-top: 26px; padding: 24px 28px 21px; display: grid; grid-template-columns: 150px minmax(120px,1fr) 180px; align-items: center; gap: 22px; overflow: hidden; border: 1px solid rgba(0,105,92,.14); border-radius: 20px; background: linear-gradient(135deg,rgba(255,255,255,.98),rgba(241,251,249,.94)); box-shadow: 0 18px 42px rgba(38,42,50,.09); }
+.online-tenure::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px; background: linear-gradient(90deg,var(--orange) 0 22%,var(--teal) 62%,var(--teal-deep) 100%); }
+.tenure-origin { min-height: 102px; padding: 15px 16px; display: flex; flex-direction: column; justify-content: center; border: 1px solid rgba(255,163,0,.3); border-radius: 15px; background: var(--orange-50); }
+.tenure-origin span { color: var(--text-mute); font-size: .62rem; font-weight: 900; letter-spacing: .16em; }
+.tenure-origin strong { margin: 2px 0; color: var(--text); font-size: 1.65rem; font-weight: 900; line-height: 1; }
+.tenure-origin small { color: var(--gray); font-size: .7rem; font-weight: 700; }
+.tenure-journey { position: relative; height: 44px; display: flex; justify-content: center; align-items: flex-end; }
+.tenure-journey::before { content: ""; position: absolute; top: 11px; left: 0; right: 0; height: 2px; background: linear-gradient(90deg,var(--orange),var(--teal-deep)); }
+.tenure-journey::after { content: ""; position: absolute; top: 6px; right: 0; width: 10px; height: 10px; border-radius: 50%; background: var(--teal-deep); box-shadow: -100px 0 0 var(--orange); }
+.tenure-journey span { color: var(--text-mute); font-size: .64rem; font-weight: 800; letter-spacing: .12em; }
+.tenure-years { display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: 10px; }
+.tenure-years strong { grid-row: 1 / span 2; color: var(--teal-deep); font-size: 3.7rem; font-weight: 900; line-height: .9; letter-spacing: -.06em; }
+.tenure-years strong small { margin-left: 4px; font-size: .8rem; letter-spacing: 0; }
+.tenure-years > span { align-self: end; color: var(--text-mute); font-size: .64rem; font-weight: 900; letter-spacing: .13em; }
+.tenure-years > b { align-self: start; color: var(--text); font-size: .9rem; font-weight: 900; }
+.tenure-proof { grid-column: 1 / -1; margin: -1px 0 0; padding-top: 17px; display: flex; gap: 8px 18px; flex-wrap: wrap; border-top: 1px solid rgba(0,105,92,.1); font-size: .76rem; line-height: 1.6; }
+.tenure-proof strong { color: var(--teal-deep); }
+.tenure-proof span { color: var(--gray); font-weight: 700; }
 @media (max-width: 560px) {
-  .online-tenure { grid-template-columns: auto 22px 1fr; padding: 13px; gap: 9px; }
+  .online-tenure { grid-template-columns: 112px 1fr; padding: 19px 17px 17px; gap: 15px; }
+  .tenure-origin { min-height: 92px; padding: 12px; }
+  .tenure-journey { display: none; }
+  .tenure-years { justify-self: end; }
+  .tenure-years strong { font-size: 3.15rem; }
+  .tenure-proof { grid-column: 1 / -1; margin-top: 0; }
 }
 .concern-list { margin-top: 44px; display: flex; flex-direction: column; gap: 26px; }
 .concern { display: grid; grid-template-columns: minmax(240px, 0.9fr) 1.4fr; gap: 20px 32px; align-items: start; }
@@ -1392,9 +1409,10 @@ h3 { font-size: 1.1rem; font-weight: 700; }
       <h2>爸媽對線上課的 5 個擔心，<br>我們直接回答</h2>
       <p class="lead concerns-intro"><span>對線上課有疑慮很正常。疫情那幾年，大家都看過孩子「掛在鏡頭前放空」。</span><span>橘子蘋果的線上課從 2019 年開始打磨，就是為了解決這些問題。</span></p>
       <div class="online-tenure" aria-label="橘子蘋果線上課程自 2019 年開始，已有 7 年線上教學實戰">
-        <span class="start-year">2019<br>開始</span>
-        <span class="tenure-arrow" aria-hidden="true">→</span>
-        <span class="tenure-copy"><strong><span data-online-years data-start-year="2019">7</span> 年線上教學實戰</strong><small>不是疫情期間臨時轉線上，而是持續打磨至今</small></span>
+        <div class="tenure-origin"><span>ONLINE SINCE</span><strong>2019</strong><small>線上班正式啟動</small></div>
+        <div class="tenure-journey" aria-hidden="true"><span>持續迭代至今</span></div>
+        <div class="tenure-years"><strong><span data-online-years data-start-year="2019">7</span><small>年</small></strong><span>ONLINE CLASS</span><b>線上教學實戰</b></div>
+        <p class="tenure-proof"><strong>不是疫情期間臨時轉線上</strong><span>而是從課程、互動到真人老師支援，持續打磨至今</span></p>
       </div>
     </div>
     <div class="concern-list">
