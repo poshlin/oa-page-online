@@ -925,48 +925,66 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 
 @media (max-width: 480px) { .cr-caption { font-size: 0.74rem; } .cr-spot .lbl { font-size: 0.6rem; } }
 
-/* ---------- Hero C：全幅短影片（沿用首頁視覺語言） ---------- */
-.hero.hero-c { position: relative; min-height: clamp(700px, 88vh, 900px); padding: 0; display: flex; align-items: stretch; overflow: hidden; isolation: isolate; background: #11151D; }
-.hero-c-media, .hero-c-media::before, .hero-c-media::after { position: absolute; inset: 0; }
-.hero-c-media { z-index: 0; background: #11151D url('assets/hero-c-online-poster.jpg') center/cover no-repeat; }
-.hero-c-media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
-.hero-c-media::before { content: ""; z-index: 1; background:
-  linear-gradient(90deg, rgba(8,11,16,.96) 0%, rgba(8,11,16,.84) 34%, rgba(8,11,16,.34) 62%, rgba(8,11,16,.10) 100%),
-  linear-gradient(0deg, rgba(8,11,16,.88) 0%, rgba(8,11,16,.22) 52%, rgba(8,11,16,.08) 100%); }
-.hero-c-media::after { content: ""; z-index: 2; background: linear-gradient(135deg, rgba(255,163,0,.15), transparent 34%); mix-blend-mode: screen; }
-.hero-c > .container { position: relative; z-index: 3; width: 100%; display: flex; }
-.hero-c-inner { width: 100%; display: flex; align-items: flex-end; padding: clamp(104px, 14vh, 150px) 0 70px; }
-.hero-c-copy { max-width: 690px; }
-.hero-c .hero-kicker { color: #DDFBF7; border-color: rgba(255,255,255,.22); background: rgba(18,21,30,.58); box-shadow: 0 8px 24px rgba(0,0,0,.18); backdrop-filter: blur(10px); }
-.hero-c h1 { color: #fff; font-size: clamp(2.5rem, 5.2vw, 4.15rem); font-weight: 800; line-height: 1.14; letter-spacing: -.02em; text-shadow: 0 4px 28px rgba(0,0,0,.38); }
-.hero-c h1 .hl { color: #fff; background: linear-gradient(transparent 70%, rgba(255,163,0,.88) 70%); padding: 0 2px; }
-.hero-c .lead { color: rgba(255,255,255,.92); font-size: 1.08rem; line-height: 1.75; text-shadow: 0 2px 14px rgba(0,0,0,.45); }
-.hero-c .lead .hl-mark { color: #fff; background: linear-gradient(transparent 62%, rgba(255,163,0,.52) 62%); }
-.hero-c .btn-secondary { color: #fff; border-color: rgba(255,255,255,.82); background: rgba(18,21,30,.36); backdrop-filter: blur(8px); }
-.hero-c .btn-secondary:hover { color: #fff; background: rgba(18,21,30,.68); }
-.hero-c-mechanism { display: inline-flex; align-items: center; gap: 10px; margin: -12px 0 30px; padding: 10px 16px; border: 1px solid rgba(255,255,255,.22); border-radius: 999px; color: #fff; background: rgba(18,21,30,.58); box-shadow: 0 8px 24px rgba(0,0,0,.2); backdrop-filter: blur(10px); font-size: .82rem; font-weight: 700; }
-.hero-c-mechanism .k { color: var(--orange); font-weight: 900; }
-.hero-c .hero-proof { border-color: rgba(255,255,255,.25); }
-.hero-c .hero-proof .item { color: rgba(255,255,255,.76); }
-.hero-c .hero-proof .item strong { color: #fff; }
-.hero-c .hero-proof .item .star { color: var(--orange); }
-@media (max-width: 980px) {
-  .hero.hero-c { min-height: 780px; }
-  .hero-c-inner { align-items: flex-end; padding: 96px 0 72px; }
-  .hero-c-media::before { background:
-    linear-gradient(0deg, rgba(8,11,16,.98) 0%, rgba(8,11,16,.84) 52%, rgba(8,11,16,.20) 100%),
-    linear-gradient(90deg, rgba(8,11,16,.56), rgba(8,11,16,.08)); }
+/* ---------- Hero C v2：暖白編輯感 × 多鏡電影視窗 ---------- */
+.hero.hero-c { padding: 62px 0 82px; overflow: hidden; background:
+  radial-gradient(620px 420px at 92% 8%, rgba(0,196,179,.14), transparent 66%),
+  radial-gradient(520px 360px at 5% 94%, rgba(255,163,0,.12), transparent 68%),
+  linear-gradient(135deg, #FFFDF8 0%, #FAF9F6 54%, #F2FBFA 100%); }
+.hero-c-layout { display: grid; grid-template-columns: minmax(0,.88fr) minmax(520px,1.12fr); gap: 58px; align-items: center; }
+.hero-c-copy { position: relative; z-index: 2; }
+.hero-c-edition { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; color: var(--teal-deep); font-family: 'JetBrains Mono','SF Mono',Consolas,monospace; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.hero-c-edition::before { content: ""; width: 32px; height: 2px; background: var(--orange); }
+.hero-c h1 { font-size: clamp(2.35rem,4.6vw,3.65rem); font-weight: 800; line-height: 1.15; letter-spacing: -.02em; margin-bottom: 22px; }
+.hero-c h1 .hl { color: var(--teal-deep); background: linear-gradient(transparent 72%, rgba(255,163,0,.58) 72%); padding: 0 2px; }
+.hero-c .lead { color: var(--gray); font-size: 1rem; line-height: 1.75; margin-bottom: 30px; }
+.hero-c .hero-cta-row { margin-bottom: 28px; }
+.hero-c .btn-primary { flex: 0 0 auto; min-width: 240px; white-space: nowrap; }
+.hero-c .btn-secondary { padding: 12px 4px; border: 0; border-radius: 0; color: var(--teal-deep); background: transparent; box-shadow: none; text-decoration: underline; text-decoration-color: rgba(0,105,92,.32); text-underline-offset: 5px; }
+.hero-c .btn-secondary:hover { color: var(--teal-deep); background: transparent; text-decoration-color: var(--teal-deep); }
+@media (max-width: 640px) {
+  .hero-c .btn-primary { width: 100%; min-width: 0; }
 }
-@media (max-width: 760px) {
-  .hero.hero-c { min-height: 820px; }
-  .hero-c-media video { display: none; }
-  .hero-c-media { background-position: 55% center; }
-  .hero-c-inner { padding: 88px 0 74px; }
-  .hero-c-copy { max-width: 100%; }
-  .hero-c .hero-cta-row { margin-bottom: 34px; }
-  .hero-c-mechanism { align-items: flex-start; border-radius: 16px; line-height: 1.6; }
+.hero-c-mechanism { position: relative; margin: 0 0 30px; padding: 16px 18px 16px 22px; border: 1px solid var(--line); border-left: 4px solid var(--teal); border-radius: 0 16px 16px 0; color: var(--text); background: rgba(255,255,255,.86); box-shadow: var(--shadow-sm); font-size: .82rem; font-weight: 700; line-height: 1.65; }
+.hero-c-mechanism .k { color: var(--orange); font-weight: 900; padding: 0 4px; }
+.hero-c .hero-proof { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px 30px; margin-top: 0; padding-top: 24px; }
+.hero-c .hero-proof .item strong { font-size: 1.42rem; }
+.hero-c-visual { position: relative; padding: 18px 0 34px 18px; }
+.hero-c-visual::before { content: ""; position: absolute; left: 0; top: 0; width: 44%; height: 64%; border: 2px solid rgba(255,163,0,.68); border-radius: 24px; }
+.hero-c-film { position: relative; z-index: 1; aspect-ratio: 16/10; overflow: hidden; border-radius: 24px; background: #12151E url('assets/hero-c-online-poster.jpg') center/cover no-repeat; box-shadow: 0 24px 58px rgba(18,21,30,.18); }
+.hero-c-film video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.hero-c-film::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg,rgba(8,11,16,.38),transparent 26%,transparent 63%,rgba(8,11,16,.82)); }
+.film-head { position: absolute; z-index: 2; left: 18px; right: 18px; top: 16px; display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,.9); font-family: 'JetBrains Mono','SF Mono',Consolas,monospace; font-size: .66rem; font-weight: 700; letter-spacing: .1em; }
+.film-head .live { display: inline-flex; align-items: center; gap: 7px; }
+.film-head .live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--orange); }
+.film-caption { position: absolute; z-index: 2; left: 20px; right: 20px; bottom: 18px; display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center; color: #fff; }
+.film-caption .scene-no { color: var(--orange); font-family: 'JetBrains Mono','SF Mono',Consolas,monospace; font-size: .8rem; font-weight: 700; }
+.film-caption .scene-text { font-size: .88rem; font-weight: 700; line-height: 1.5; }
+.film-scenes { position: absolute; z-index: 2; right: 20px; bottom: 52px; display: flex; gap: 6px; }
+.film-scenes span { width: 28px; height: 3px; border-radius: 999px; background: rgba(255,255,255,.35); transition: width .22s ease, background .22s ease; }
+.film-scenes span.is-active { width: 48px; background: var(--orange); }
+.hero-c-note { display: flex; justify-content: space-between; gap: 18px; margin: 14px 4px 0 22px; color: var(--text-mute); font-size: .72rem; font-weight: 700; letter-spacing: .04em; }
+.hero-c-note strong { color: var(--teal-deep); }
+@media (max-width: 1040px) {
+  .hero-c-layout { grid-template-columns: 1fr; gap: 40px; }
+  .hero-c-copy { max-width: 760px; }
+  .hero-c-visual { max-width: 820px; width: 100%; margin: 0 auto; }
+  .hero-c .hero-proof { grid-template-columns: repeat(4,auto); }
 }
-@media (prefers-reduced-motion: reduce) { .hero-c-media video { display: none !important; } }
+@media (max-width: 640px) {
+  .hero.hero-c { padding: 48px 0 64px; }
+  .hero-c h1 { font-size: clamp(2rem,10vw,2.8rem); }
+  .hero-c .hero-proof { grid-template-columns: repeat(2,1fr); }
+  .hero-c-visual { padding: 10px 0 24px 10px; }
+  .hero-c-film { border-radius: 16px; aspect-ratio: 4/3; }
+  .hero-c-visual::before { border-radius: 16px; }
+  .film-head { left: 12px; right: 12px; top: 11px; }
+  .film-caption { left: 14px; right: 14px; bottom: 12px; }
+  .film-scenes { right: 14px; bottom: 46px; }
+  .film-scenes span { width: 20px; }
+  .film-scenes span.is-active { width: 34px; }
+  .hero-c-note { margin-left: 12px; font-size: .66rem; }
+}
+@media (prefers-reduced-motion: reduce) { .hero-c-film video { display: none !important; } }
 
 /* ---------- 01 疑慮直球區 ---------- */
 .sec-concerns { background: #fff; }
@@ -1155,15 +1173,10 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 
 <!-- Hero -->
 <section class="hero hero-c" aria-label="線上課程介紹">
-  <div class="hero-c-media" aria-hidden="true">
-    <video muted loop playsinline preload="none" poster="assets/hero-c-online-poster.jpg"
-           data-webm="assets/hero-c-online.webm"
-           data-mp4="assets/hero-c-online.mp4"></video>
-  </div>
   <div class="container">
-    <div class="hero-c-inner">
+    <div class="hero-c-layout">
       <div class="hero-c-copy">
-        <span class="hero-kicker"><span class="dot" aria-hidden="true"></span>雙師制線上教室・1:6–1:10 真人小班</span>
+        <p class="hero-c-edition">Real online class・film 01—04</p>
         <h1>線上學程式，<br><span class="hl">孩子真的學得會</span></h1>
         <p class="lead">因為這不是丟一支影片給孩子自己看。卡住按一下「我要發問」，<span class="hl-mark">真人老師會 1:1 連線、看著孩子的螢幕</span>，帶他把問題想通——不限地區，海外也能上。</p>
         <div class="hero-cta-row">
@@ -1177,6 +1190,19 @@ h3 { font-size: 1.1rem; font-weight: 700; }
           <div class="item" role="listitem"><strong><span data-count="1000" data-format="comma">0</span>+</strong>名學生同期在讀</div>
           <div class="item" role="listitem"><strong><span class="star">★</span> <span data-count="4.9" data-decimals="1">0</span></strong>Google 評論 2,200+ 則</div>
         </div>
+      </div>
+      <div class="hero-c-visual">
+        <div class="hero-c-film" role="img" aria-label="橘子蘋果線上課真實畫面：孩子在家透過不同角度操作 Scratch，螢幕上有真人老師巡看與輔導">
+          <video muted loop playsinline preload="none" poster="assets/hero-c-online-poster.jpg"
+                 data-webm="assets/hero-c-online.webm"
+                 data-mp4="assets/hero-c-online.mp4" aria-hidden="true"></video>
+          <div class="film-head" aria-hidden="true">
+            <span class="live">真實線上課畫面</span><span>13 SEC・04 SHOTS</span>
+          </div>
+          <div class="film-scenes" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span></div>
+          <div class="film-caption" aria-hidden="true"><span class="scene-no">01</span><span class="scene-text">在家專注上課</span></div>
+        </div>
+        <p class="hero-c-note"><span><strong>四個真實鏡位</strong>・由遠到近看見學習過程</span><span>雙師制線上教室</span></p>
       </div>
     </div>
   </div>
@@ -1614,17 +1640,38 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 })();
 </script>
 <script>
-/* Hero C：桌機在主要資源載入完成後才下載影片；手機、省流量與減少動態只顯示 poster。 */
+/* Hero C：主要資源完成後才下載；省流量、慢速網路與減少動態只顯示 poster。 */
 (function () {
-  var video = document.querySelector('.hero-c-media video');
+  var video = document.querySelector('.hero-c-film video');
   if (!video) return;
 
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var desktop = window.matchMedia && window.matchMedia('(min-width: 761px)').matches;
   var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
   var saveData = connection && connection.saveData;
   var slowNetwork = connection && /(^|-)2g$/.test(connection.effectiveType || '');
-  if (reduceMotion || !desktop || saveData || slowNetwork) return;
+  if (reduceMotion || saveData || slowNetwork) return;
+
+  var sceneNo = document.querySelector('.film-caption .scene-no');
+  var sceneText = document.querySelector('.film-caption .scene-text');
+  var sceneBars = Array.prototype.slice.call(document.querySelectorAll('.film-scenes span'));
+  var scenes = [
+    { start: 0, text: '在家專注上課' },
+    { start: 3.3, text: '跟著影片動手實作' },
+    { start: 6.6, text: '真人老師巡看螢幕' },
+    { start: 9.9, text: '卡住按「我要發問」' }
+  ];
+
+  function updateScene() {
+    var current = 0;
+    for (var i = scenes.length - 1; i >= 0; i--) {
+      if (video.currentTime >= scenes[i].start) { current = i; break; }
+    }
+    if (sceneNo) sceneNo.textContent = String(current + 1).padStart(2, '0');
+    if (sceneText) sceneText.textContent = scenes[current].text;
+    sceneBars.forEach(function (bar, i) { bar.classList.toggle('is-active', i === current); });
+  }
+  video.addEventListener('timeupdate', updateScene);
+  video.addEventListener('seeked', updateScene);
 
   function loadHeroVideo() {
     if (video.dataset.loaded === 'true') return;
