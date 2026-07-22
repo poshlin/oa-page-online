@@ -1293,20 +1293,30 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 .faq-list .faq-a a { color: var(--teal-deep); font-weight: 700; }
 
 /* ---------- 結尾 CTA ---------- */
-.sec-final { background: var(--ink); color: #fff; text-align: center; overflow: hidden; }
-.sec-final .container-narrow { position: relative; }
-.sec-final h2 { color: #fff; }
-.sec-final .lead { max-width: 39rem; color: rgba(255,255,255,0.75); margin: 14px auto 34px; font-size: 1.03rem; line-height: 1.75; }
+.sec-final { position: relative; background: radial-gradient(680px 420px at 8% 100%, rgba(255,163,0,.18), transparent 68%), radial-gradient(720px 460px at 94% 4%, rgba(0,196,179,.17), transparent 70%), linear-gradient(145deg,#FFFDF8 0%,#F5FCFA 54%,#FFF9ED 100%); color: var(--text); text-align: center; overflow: hidden; border-top: 1px solid rgba(0,105,92,.08); }
+.sec-final::before,
+.sec-final::after { content: ""; position: absolute; border-radius: 50%; pointer-events: none; }
+.sec-final::before { width: 190px; height: 190px; top: -105px; left: 9%; border: 28px solid rgba(255,163,0,.11); }
+.sec-final::after { width: 230px; height: 230px; right: 7%; bottom: -150px; border: 32px solid rgba(0,196,179,.10); }
+.sec-final .container-narrow { position: relative; z-index: 1; }
+.sec-final h2 { color: var(--text); }
+.sec-final .lead { max-width: 39rem; color: var(--gray); margin: 14px auto 34px; font-size: 1.03rem; line-height: 1.75; }
 .sec-final .lead span { display: block; }
-.sec-final .lead .lead-promise { color: #fff; font-size: 1.08em; font-weight: 800; }
-.final-points { list-style: none; display: flex; justify-content: center; gap: 12px 30px; flex-wrap: wrap; margin-bottom: 38px; }
-.final-points li { font-size: 0.92rem; color: rgba(255,255,255,0.85); }
-.final-points li::before { content: "▸"; color: var(--teal); font-weight: 900; margin-right: 8px; }
-.final-contact { margin-top: 32px; font-size: 0.88rem; color: rgba(255,255,255,0.78); }
-.final-contact a { color: #fff; font-weight: 700; text-decoration: none; }
+.sec-final .lead .lead-promise { color: var(--teal-deep); font-size: 1.08em; font-weight: 800; }
+.final-points { list-style: none; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 38px; }
+.final-points li { padding: 10px 16px; border: 1px solid rgba(0,105,92,.12); border-radius: 999px; background: rgba(255,255,255,.78); box-shadow: var(--shadow-sm); font-size: 0.88rem; color: var(--gray); font-weight: 700; }
+.final-points li::before { content: "▸"; color: var(--teal-deep); font-weight: 900; margin-right: 8px; }
+.final-contact { margin-top: 32px; font-size: 0.88rem; color: var(--gray); }
+.final-contact a { color: var(--teal-deep); font-weight: 800; text-decoration: none; }
 .final-contact a:hover { text-decoration: underline; }
-.sec-final .btn-secondary { background: transparent; color: #fff; border-color: rgba(255,255,255,0.7); margin-left: 14px; }
-.sec-final .btn-secondary:hover { background: rgba(255,255,255,0.1); color: #fff; }
+.sec-final .btn-primary { box-shadow: 0 12px 26px rgba(255,163,0,.24); }
+.sec-final .btn-secondary { background: rgba(255,255,255,.82); color: var(--teal-deep); border-color: rgba(0,105,92,.36); margin-left: 14px; box-shadow: var(--shadow-sm); }
+.sec-final .btn-secondary:hover { background: var(--teal-pale); color: var(--teal-deep); border-color: rgba(0,105,92,.55); }
+@media (max-width: 560px) {
+  .sec-final .btn-secondary { display: table; margin: 12px auto 0; }
+  .final-points { align-items: stretch; flex-direction: column; }
+  .final-points li { border-radius: 13px; }
+}
 /* ---------- Sticky CTA ---------- */
 .sticky-cta {
   position: fixed; left: 50%; transform: translateX(-50%) translateY(20px); bottom: 18px; z-index: 90;
