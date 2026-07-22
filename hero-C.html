@@ -1460,13 +1460,13 @@ h3 { font-size: 1.1rem; font-weight: 700; }
       <div class="hero-c-visual">
         <div class="hero-c-film" role="img" aria-label="橘子蘋果線上課真實畫面：孩子在家操作 Scratch，真人老師查看學生畫面並一對一引導">
           <video muted playsinline preload="none" poster="assets/hero-c-online-poster.jpg?v=20260722-10"
-                 data-webm="assets/hero-c-online.webm?v=20260722-11"
-                 data-mp4="assets/hero-c-online.mp4?v=20260722-11" aria-hidden="true"></video>
+                 data-webm="assets/hero-c-online.webm?v=20260722-12"
+                 data-mp4="assets/hero-c-online.mp4?v=20260722-12" aria-hidden="true"></video>
           <div class="film-endcard" aria-hidden="true"><span class="end-kicker">ORANGEAPPLE · ONLINE CLASS</span><strong><span>看得懂・做得出</span><span>真人老師一對一引導</span></strong><small>雙師制線上課程</small></div>
           <div class="film-head" aria-hidden="true">
-            <span class="live">真實線上課畫面</span><span>06 REAL MOMENTS</span>
+            <span class="live">真實線上課畫面</span><span>07 REAL MOMENTS</span>
           </div>
-          <div class="film-scenes" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="film-scenes" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
           <div class="film-caption" aria-hidden="true"><span class="scene-no">01</span><span class="scene-text">跟著影片專心上課</span></div>
         </div>
         <p class="hero-c-note"><span><strong>不是自己看影片</strong>・卡住有真人老師接手</span><span>雙師制線上教室</span></p>
@@ -2012,7 +2012,8 @@ h3 { font-size: 1.1rem; font-weight: 700; }
     { start: 5.5, text: '卡住，向真人老師說明問題' },
     { start: 8.25, text: '老師查看學生畫面' },
     { start: 11, text: '真人老師專注聆聽' },
-    { start: 13.75, text: '真人老師一對一進來引導' }
+    { start: 13.75, text: '真人老師一對一進來引導' },
+    { start: 16.25, text: '老師陪孩子把問題想通' }
   ];
 
   function updateScene() {
@@ -2058,7 +2059,7 @@ h3 { font-size: 1.1rem; font-weight: 700; }
       if (film) film.classList.remove('is-endcard');
       var replayPromise = video.play();
       if (replayPromise && typeof replayPromise.catch === 'function') replayPromise.catch(function () {});
-    }, 4200);
+    }, 5000);
   });
 
   window.addEventListener('load', function () {
