@@ -283,7 +283,7 @@
       "@type": "Course",
       "@id": "https://orangeapple.co/campaigns/online#course-albert",
       "name": "頑皮艾伯特（線上程式啟蒙）",
-      "description": "橘子蘋果玩創系列的程式啟蒙課程，透過遊戲化情境建立序列、迴圈、條件等基礎程式觀念，採雙師教學、線上 1:6 小班，是唯一可使用平板上課的課程，報名前可免費試聽。",
+      "description": "橘子蘋果玩創系列的程式啟蒙課程，透過遊戲化情境建立序列、迴圈、條件等基礎程式觀念，採雙師教學、線上 1:6 小班，報名前可免費試聽。",
       "provider": {
         "@id": "https://orangeapple.co/#organization"
       },
@@ -787,18 +787,18 @@
         },
         {
           "@type": "Question",
-          "name": "上課需要準備什麼設備？可以用平板或手機嗎？",
+          "name": "上課需要準備什麼設備？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "大多數課程使用一般家用電腦即可（Intel i3 或 Apple M 系列以上、8GB 記憶體），需準備麥克風與耳機，桌機需自備麥克風；麥塊與 Roblox 課程需要較高規格（16GB 記憶體與獨立顯卡等級），課前顧問會逐一確認。平板與手機無法上正式課程，唯一例外是頑皮艾伯特課程可使用平板。免費試聽就在線上進行，可以順便確認家中設備是否符合。"
+            "text": "大多數課程使用一般家用電腦即可（Intel i3 或 Apple M 系列以上、8GB 記憶體），需準備麥克風與耳機，桌機需自備麥克風；麥塊與 Roblox 課程需要較高規格（16GB 記憶體與獨立顯卡等級），課前顧問會逐一確認。免費試聽就在線上進行，也能順便確認家中設備是否符合。"
           }
         },
         {
           "@type": "Question",
-          "name": "臨時有事或生病缺課怎麼辦？有補課嗎？",
+          "name": "臨時有事，課程怎麼安排？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "依課程類型而定：每週上課的常態課程（玩創、菁英、麥塊、Roblox、麥思）採彈性調課，開課前主動調課即可；程式選手班每期含 2 次補課；APCS、ITS、AI 思維課提供補課影片。"
+            "text": "常態課程可於家長平台申請調課；遇到臨時健康狀況，也可以聯繫課程顧問協助確認後續安排。不同課程適用方式略有差異，報名時會由顧問完整說明。"
           }
         },
         {
@@ -1120,16 +1120,17 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 .concern-list { margin-top: 44px; display: flex; flex-direction: column; gap: 26px; }
 .concern { display: grid; grid-template-columns: minmax(240px, 0.9fr) 1.4fr; gap: 20px 32px; align-items: start; }
 @media (max-width: 860px) { .concern { grid-template-columns: 1fr; gap: 12px; } }
-.concern .bubble-row { display: flex; align-items: flex-start; gap: 12px; }
+.concern .question-card { min-height: 126px; padding: 18px 20px 20px; border: 1px solid var(--line); border-radius: 12px; background: linear-gradient(145deg,#FFFFFF 0%,var(--bg-light) 100%); box-shadow: var(--shadow-sm); }
+.concern .bubble-row { display: flex; align-items: center; gap: 12px; }
 .concern .who { flex: none; width: 44px; height: 44px; border-radius: 50%; background: var(--line-soft); color: var(--text-mute); display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 900; }
-.concern .bubble { position: relative; background: var(--bg-light); border: 1px solid var(--line); border-radius: 4px 18px 18px 18px; padding: 14px 20px; font-size: 1.02rem; font-weight: 700; line-height: 1.6; }
+.concern .bubble { position: relative; padding: 4px 0; color: var(--text); font-size: 1.02rem; font-weight: 700; line-height: 1.6; }
 .concern .answer { background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--teal); border-radius: 12px; padding: 22px 26px; box-shadow: var(--shadow-sm); }
 .concern .answer .a-head { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 0.95rem; color: var(--teal-deep); margin-bottom: 8px; }
 .concern .answer .a-head svg { width: 20px; height: 20px; flex: none; }
 .concern .answer p { font-size: 0.95rem; color: var(--gray); margin-bottom: 12px; }
 .concern .answer p strong { color: var(--text); }
 .concern .chip { display: inline-block; font-size: 0.8rem; font-weight: 700; color: var(--teal-deep); background: var(--teal-pale); border-radius: 999px; padding: 4px 14px; }
-.concern-idx { font-size: 0.78rem; font-weight: 900; letter-spacing: 0.16em; color: var(--text-mute); margin-bottom: 8px; }
+.concern-idx { font-size: 0.72rem; font-weight: 900; letter-spacing: 0.16em; color: var(--teal-deep); margin-bottom: 12px; }
 
 /* ---------- 02 雙師：低壓、專注的線上學習氛圍 ---------- */
 .sec-dual { color: var(--text); background: radial-gradient(560px 360px at 8% 10%, rgba(0,196,179,.13), transparent 68%), radial-gradient(520px 320px at 92% 42%, rgba(255,163,0,.10), transparent 70%), linear-gradient(180deg,#F1FBF9 0%,#FFFDF8 58%,#F7FBFA 100%); }
@@ -1221,7 +1222,8 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 .course-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .course-group.g-mod .course-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 920px; margin-inline: auto; }
 .elite-track { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; counter-reset: elite-stage; }
-.elite-stage { position: relative; min-height: 92px; padding: 18px 44px 17px 56px; display: flex; flex-direction: column; justify-content: center; border: 1px solid rgba(0,105,92,.16); border-radius: 14px; background: #fff; color: var(--text); text-decoration: none; box-shadow: var(--shadow-sm); transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+.elite-stage { position: relative; min-height: 92px; padding: 18px 44px 17px 56px; display: flex; flex-direction: column; justify-content: center; overflow: hidden; border: 1px solid rgba(0,105,92,.16); border-radius: 14px; background: #fff; color: var(--text); text-decoration: none; box-shadow: var(--shadow-sm); transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+.elite-stage::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--teal); }
 .elite-stage::after { content: "→"; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: var(--text-mute); font-weight: 900; }
 .elite-stage:hover { transform: translateY(-3px); border-color: rgba(0,105,92,.32); box-shadow: var(--shadow-md); }
 .elite-stage:hover::after { color: var(--teal-deep); }
@@ -1313,18 +1315,31 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 .abroad-card h3 { margin-bottom: 8px; color: var(--teal-deep); }
 .abroad-card p { font-size: 0.9rem; color: var(--gray); }
 .trust-band { margin-top: 52px; padding-top: 34px; border-top: 1px solid var(--line); }
-.trust-band .tb-title { font-size: 0.8rem; font-weight: 900; letter-spacing: 0.18em; color: var(--text-mute); margin-bottom: 18px; }
-.trust-band ul { list-style: none; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
-.trust-band li { grid-column: span 2; min-height: 62px; display: flex; align-items: center; gap: 11px; font-size: 0.87rem; font-weight: 700; line-height: 1.45; color: var(--gray); background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 13px 18px; box-shadow: var(--shadow-sm); }
-.trust-band li:nth-last-child(-n+2) { grid-column: span 3; }
-.trust-band li::before { content: "★"; flex: 0 0 auto; color: var(--orange); font-size: 0.82rem; }
+.trust-band-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 18px; }
+.trust-band .tb-title { margin: 0; color: var(--text); font-size: 1.05rem; font-weight: 900; }
+.trust-band .tb-note { max-width: 35em; margin: 0; color: var(--text-mute); font-size: .8rem; line-height: 1.6; text-align: right; }
+.trust-showcase { display: grid; grid-template-columns: minmax(280px,.9fr) minmax(0,1.6fr); gap: 14px; }
+.trust-feature { position: relative; min-height: 218px; padding: 28px; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; border: 1px solid rgba(255,163,0,.28); border-radius: 16px; background: radial-gradient(240px 180px at 88% 10%,rgba(255,163,0,.18),transparent 70%),linear-gradient(145deg,#FFF9ED 0%,#FFFFFF 72%); box-shadow: var(--shadow-sm); }
+.trust-feature::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--orange); }
+.trust-feature .trust-kind { position: absolute; top: 24px; left: 28px; color: var(--text-mute); font-size: .68rem; font-weight: 900; letter-spacing: .12em; }
+.trust-feature .trust-year { position: absolute; top: 18px; right: 25px; color: rgba(255,163,0,.2); font-family: 'JetBrains Mono','SF Mono',Consolas,monospace; font-size: 4.6rem; font-weight: 900; line-height: 1; }
+.trust-feature h3 { position: relative; margin: 0 0 7px; color: var(--text); font-size: 1.38rem; font-weight: 900; line-height: 1.3; }
+.trust-feature p { position: relative; margin: 0; color: var(--gray); font-size: .82rem; }
+.trust-credentials { list-style: none; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
+.trust-credentials li { position: relative; min-height: 102px; padding: 19px 20px 17px; display: flex; flex-direction: column; justify-content: center; overflow: hidden; border: 1px solid rgba(0,119,107,.14); border-radius: 14px; background: #fff; box-shadow: var(--shadow-sm); }
+.trust-credentials li::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--teal); }
+.trust-credentials span { margin-bottom: 5px; color: var(--teal-deep); font-size: .66rem; font-weight: 900; letter-spacing: .12em; }
+.trust-credentials strong { color: var(--text); font-size: .88rem; font-weight: 900; line-height: 1.45; }
 @media (max-width: 860px) {
-  .trust-band ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .trust-band li, .trust-band li:nth-last-child(-n+2) { grid-column: auto; }
+  .trust-band-head { align-items: flex-start; flex-direction: column; gap: 5px; }
+  .trust-band .tb-note { text-align: left; }
+  .trust-showcase { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
-  .trust-band ul { grid-template-columns: 1fr; }
-  .trust-band li { min-height: 0; }
+  .trust-feature { min-height: 196px; padding: 24px 20px; }
+  .trust-feature .trust-kind { left: 20px; }
+  .trust-feature .trust-year { right: 16px; font-size: 3.7rem; }
+  .trust-credentials { grid-template-columns: 1fr; }
 }
 
 .video-rail-head { margin-top: 46px; }
@@ -1492,7 +1507,7 @@ h3 { font-size: 1.1rem; font-weight: 700; }
     <div class="concern-list">
 
       <article class="concern reveal">
-        <div>
+        <div class="question-card">
           <p class="concern-idx">擔心 1／5</p>
           <div class="bubble-row"><span class="who">家長</span><p class="bubble">孩子坐不住，線上會不會更放飛？</p></div>
         </div>
@@ -1504,7 +1519,7 @@ h3 { font-size: 1.1rem; font-weight: 700; }
       </article>
 
       <article class="concern reveal">
-        <div>
+        <div class="question-card">
           <p class="concern-idx">擔心 2／5</p>
           <div class="bubble-row"><span class="who">家長</span><p class="bubble">看影片自學，能學得會嗎？</p></div>
         </div>
@@ -1516,7 +1531,7 @@ h3 { font-size: 1.1rem; font-weight: 700; }
       </article>
 
       <article class="concern reveal">
-        <div>
+        <div class="question-card">
           <p class="concern-idx">擔心 3／5</p>
           <div class="bubble-row"><span class="who">家長</span><p class="bubble">沒有老師在旁邊，效果怎麼追蹤？</p></div>
         </div>
@@ -1528,25 +1543,25 @@ h3 { font-size: 1.1rem; font-weight: 700; }
       </article>
 
       <article class="concern reveal">
-        <div>
+        <div class="question-card">
           <p class="concern-idx">擔心 4／5</p>
-          <div class="bubble-row"><span class="who">家長</span><p class="bubble">臨時有事、生病缺課怎麼辦？</p></div>
+          <div class="bubble-row"><span class="who">家長</span><p class="bubble">臨時有事，課程怎麼安排？</p></div>
         </div>
         <div class="answer">
-          <p class="a-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>缺一堂，接得回來</p>
-          <p>常態課程採<strong>彈性調課</strong>，開課前主動調課即可；選手班每期含 2 次補課；APCS、ITS、AI 思維課提供補課影片。缺一堂，不會就此跟不上。</p>
-          <span class="chip">彈性調課・補課制度</span>
+          <p class="a-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>行程有變，仍有安排</p>
+          <p>常態課程可於<strong>家長平台申請調課</strong>；遇到臨時健康狀況，也可以聯繫課程顧問協助確認後續安排。不同課程適用方式略有差異，報名時會由顧問完整說明。</p>
+          <span class="chip">調課與缺課安排</span>
         </div>
       </article>
 
       <article class="concern reveal">
-        <div>
+        <div class="question-card">
           <p class="concern-idx">擔心 5／5</p>
           <div class="bubble-row"><span class="who">家長</span><p class="bubble">家裡的電腦跑得動嗎？</p></div>
         </div>
         <div class="answer">
           <p class="a-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 22h8M12 18v4"/></svg>一般家用電腦就能上</p>
-          <p>大多數課程一般家用電腦就能上（i3 或 M 系列以上、8GB 記憶體），加上麥克風與耳機即可；只有麥塊、Roblox 需要較高規格，課前顧問會逐一確認。平板、手機無法上正式課程（頑皮艾伯特除外）。</p>
+          <p>大多數課程一般家用電腦就能上（i3 或 M 系列以上、8GB 記憶體），加上麥克風與耳機即可；只有麥塊、Roblox 需要較高規格，課前顧問會逐一確認。免費試聽也能順便確認家中設備是否符合。</p>
           <span class="chip">免費試聽＝順便測設備</span>
         </div>
       </article>
@@ -1626,7 +1641,7 @@ h3 { font-size: 1.1rem; font-weight: 700; }
         <svg class="course-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </summary>
       <div class="course-group-body"><div class="course-cards">
-        <a class="course-card" href="https://orangeapple.co/courses/aibot"><h4>頑皮艾伯特 <span class="tag tag-online-only">僅線上</span></h4><p>幼齡程式啟蒙，遊戲化情境學基礎邏輯。</p><div class="meta">小 1–2・線上 1:6 小班・唯一可用平板</div></a>
+        <a class="course-card" href="https://orangeapple.co/courses/aibot"><h4>頑皮艾伯特 <span class="tag tag-online-only">僅線上</span></h4><p>幼齡程式啟蒙，遊戲化情境學基礎邏輯。</p><div class="meta">小 1–2・線上 1:6 小班</div></a>
         <a class="course-card" href="https://orangeapple.co/courses/minecraft"><h4>麥塊教育版</h4><p>在 Minecraft 教育版的世界裡學程式邏輯。</p><div class="meta">小 3・線上 1:7 小班・需自備滑鼠</div></a>
         <a class="course-card" href="https://orangeapple.co/courses/roblox_ai"><h4>Roblox AI 遊戲設計</h4><p>與 AI 協作，打造自己的 Roblox 遊戲世界。</p><div class="meta">小 3 以上・線上 1:7 小班</div></a>
       </div></div>
@@ -1806,14 +1821,24 @@ h3 { font-size: 1.1rem; font-weight: 700; }
       </button>
     </div>
     <div class="trust-band reveal">
-      <p class="tb-title">機構認證與獎項</p>
-      <ul>
-        <li>中華民國補教業品保協會會員</li>
-        <li>HolonIQ 2023 Taiwan EdTech 50</li>
-        <li>STEM.org 認證</li>
-        <li>ITS 國際認證合作機構</li>
-        <li>台北市教育局合作備忘錄（2020）</li>
-      </ul>
+      <div class="trust-band-head">
+        <h3 class="tb-title">認證、合作與國際肯定</h3>
+        <p class="tb-note">教學成果之外，也有來自教育科技、認證與產業機構的長期信任。</p>
+      </div>
+      <div class="trust-showcase">
+        <article class="trust-feature">
+          <span class="trust-kind">國際教育科技肯定</span>
+          <span class="trust-year" aria-hidden="true">2023</span>
+          <h3>HolonIQ<br>Taiwan EdTech 50</h3>
+              <p>入選 HolonIQ 2023 Taiwan EdTech 50</p>
+        </article>
+        <ul class="trust-credentials">
+          <li><span>專業認證</span><strong>STEM.org 認證</strong></li>
+          <li><span>國際認證合作</span><strong>ITS 國際認證合作機構</strong></li>
+          <li><span>產業會員</span><strong>中華民國補教業品保協會會員</strong></li>
+          <li><span>教育合作</span><strong>台北市教育局合作備忘錄（2020）</strong></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -1847,12 +1872,12 @@ h3 { font-size: 1.1rem; font-weight: 700; }
         <div class="faq-a">依課程不同為 1:6 到 1:10 的真人小班：頑皮艾伯特 1:6、麥塊與 Roblox 1:7、Scratch 1:9、Python 以上 1:10、麥思數學 1:6，程式選手班為 8 人小班。線上班的師生比整體比實體班更小。</div>
       </details>
       <details>
-        <summary>上課需要準備什麼設備？可以用平板或手機嗎？</summary>
-        <div class="faq-a">大多數課程使用一般家用電腦即可（Intel i3 或 Apple M 系列以上、8GB 記憶體），需準備麥克風與耳機，桌機需自備麥克風；麥塊與 Roblox 課程需要較高規格（16GB 記憶體與獨立顯卡等級），課前顧問會逐一確認。平板與手機無法上正式課程，唯一例外是頑皮艾伯特課程可使用平板。免費試聽就在線上進行，可以順便確認家中設備是否符合。</div>
+        <summary>上課需要準備什麼設備？</summary>
+        <div class="faq-a">大多數課程使用一般家用電腦即可（Intel i3 或 Apple M 系列以上、8GB 記憶體），需準備麥克風與耳機，桌機需自備麥克風；麥塊與 Roblox 課程需要較高規格（16GB 記憶體與獨立顯卡等級），課前顧問會逐一確認。免費試聽就在線上進行，也能順便確認家中設備是否符合。</div>
       </details>
       <details>
-        <summary>臨時有事或生病缺課怎麼辦？有補課嗎？</summary>
-        <div class="faq-a">依課程類型而定：每週上課的常態課程（玩創、菁英、麥塊、Roblox、麥思）採彈性調課，開課前主動調課即可；程式選手班每期含 2 次補課；APCS、ITS、AI 思維課提供補課影片。</div>
+        <summary>臨時有事，課程怎麼安排？</summary>
+        <div class="faq-a">常態課程可於家長平台申請調課；遇到臨時健康狀況，也可以聯繫課程顧問協助確認後續安排。不同課程適用方式略有差異，報名時會由顧問完整說明。</div>
       </details>
       <details>
         <summary>家長怎麼知道孩子學得如何？</summary>
