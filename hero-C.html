@@ -1412,6 +1412,146 @@ h3 { font-size: 1.1rem; font-weight: 700; }
   .faq-grid { grid-template-columns: 1fr; }
 }
 
+/* ---------- 長頁快速導覽：比照首頁，離開 Hero 後出現 ---------- */
+.section-nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 80;
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid var(--line-soft);
+  box-shadow: 0 8px 28px rgba(18,21,30,.10);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-110%);
+  transition: opacity .22s ease, transform .28s ease, visibility 0s linear .28s;
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+.section-nav.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+.section-nav-inner { min-height: 58px; display: flex; align-items: center; gap: 18px; }
+.section-nav-toggle { display: none; }
+.section-nav-links { display: flex; align-items: stretch; justify-content: center; flex: 1; min-width: 0; }
+.section-nav-links a {
+  position: relative;
+  min-height: 58px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  color: #5A606B;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .18s ease, background-color .18s ease;
+}
+.section-nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  bottom: 0;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: var(--orange);
+  transform: scaleX(0);
+  transition: transform .18s ease;
+}
+.section-nav-links a:hover,
+.section-nav-links a[aria-current="location"] { color: var(--text); background: #FFF8E8; }
+.section-nav-links a[aria-current="location"]::after { transform: scaleX(1); }
+.section-nav-cta {
+  flex: 0 0 auto;
+  min-height: 40px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--orange);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 5px 16px rgba(255,163,0,.24);
+}
+.section-nav-links a:focus-visible,
+.section-nav-toggle:focus-visible,
+.section-nav-cta:focus-visible { outline: 3px solid rgba(255,163,0,.42); outline-offset: 2px; }
+#concerns, #dual-teacher, #courses, #flow, #proof, #faq { scroll-margin-top: 76px; }
+@media (max-width: 760px) {
+  .section-nav-inner { position: relative; min-height: 52px; padding-top: 0; padding-bottom: 0; }
+  .section-nav-toggle {
+    width: 100%;
+    min-height: 52px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--text);
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+  .section-nav-toggle-label { color: var(--text-mute); font-size: 12px; font-weight: 800; letter-spacing: .04em; }
+  .section-nav-current { overflow: hidden; color: var(--text); font-size: 15px; font-weight: 800; text-overflow: ellipsis; white-space: nowrap; }
+  .section-nav-chevron { width: 18px; height: 18px; transition: transform .2s ease; }
+  .section-nav.is-open .section-nav-chevron { transform: rotate(180deg); }
+  .section-nav-links {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 16px;
+    right: 16px;
+    display: grid;
+    justify-content: stretch;
+    padding: 6px;
+    border: 1px solid var(--line-soft);
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 16px 38px rgba(18,21,30,.16);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity .18s ease, transform .2s ease, visibility 0s linear .2s;
+  }
+  .section-nav.is-open .section-nav-links {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition-delay: 0s;
+  }
+  .section-nav-links a { min-height: 46px; justify-content: flex-start; padding: 0 14px; border-radius: 10px; font-size: 15px; }
+  .section-nav-links a::after {
+    left: 0;
+    right: auto;
+    top: 10px;
+    bottom: 10px;
+    width: 4px;
+    height: auto;
+    border-radius: 0 4px 4px 0;
+    transform: scaleY(0);
+  }
+  .section-nav-links a[aria-current="location"]::after { transform: scaleY(1); }
+  .section-nav-cta { display: none; }
+  #concerns, #dual-teacher, #courses, #flow, #proof, #faq { scroll-margin-top: 66px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .section-nav, .section-nav-links, .section-nav-chevron { transition: none; }
+}
+
 /* ---------- 結尾 CTA ---------- */
 .sec-final { position: relative; background: radial-gradient(680px 420px at 8% 100%, rgba(255,163,0,.18), transparent 68%), radial-gradient(720px 460px at 94% 4%, rgba(0,196,179,.17), transparent 70%), linear-gradient(145deg,#FFFDF8 0%,#F5FCFA 54%,#FFF9ED 100%); color: var(--text); text-align: center; overflow: hidden; border-top: 1px solid rgba(0,105,92,.08); }
 .sec-final::before,
@@ -1505,6 +1645,26 @@ h3 { font-size: 1.1rem; font-weight: 700; }
     </div>
   </div>
 </section>
+
+<!-- 長頁快速導覽：滑過 Hero 後顯示；手機採收合選單 -->
+<nav class="section-nav" aria-label="線上課程快速導覽" aria-hidden="true">
+  <div class="section-nav-inner container">
+    <button type="button" class="section-nav-toggle" aria-expanded="false" aria-controls="sectionNavLinks">
+      <span class="section-nav-toggle-label">快速導覽</span>
+      <span class="section-nav-current">家長疑慮</span>
+      <svg class="section-nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    <div class="section-nav-links" id="sectionNavLinks">
+      <a href="#concerns" data-section="concerns">家長疑慮</a>
+      <a href="#dual-teacher" data-section="dual-teacher">雙師教學</a>
+      <a href="#courses" data-section="courses">課程路徑</a>
+      <a href="#flow" data-section="flow">免費試聽</a>
+      <a href="#proof" data-section="proof">真實成果</a>
+      <a href="#faq" data-section="faq">常見問題</a>
+    </div>
+    <button type="button" class="section-nav-cta" data-oa-cta="section-nav">免費試聽</button>
+  </div>
+</nav>
 
 <!-- 01 疑慮直球區 -->
 <section class="sec-concerns" id="concerns" aria-label="家長常見疑慮">
@@ -1955,7 +2115,7 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 </section>
 
 <!-- 結尾 CTA -->
-<section class="sec-final" aria-label="預約免費試聽">
+<section class="sec-final" id="final-cta" aria-label="預約免費試聽">
   <div class="container-narrow">
     <div class="reveal">
       <h2>先讓孩子免費上一堂，再決定</h2>
@@ -2049,6 +2209,86 @@ h3 { font-size: 1.1rem; font-weight: 700; }
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
     onScroll();
+  }
+
+  // 長頁快速導覽：離開 Hero 後顯示、標示目前章節，進入最終 CTA 前退場。
+  var sectionNav = document.querySelector('.section-nav');
+  if (sectionNav && hero && finalSection) {
+    var sectionToggle = sectionNav.querySelector('.section-nav-toggle');
+    var sectionCurrent = sectionNav.querySelector('.section-nav-current');
+    var sectionLinks = Array.prototype.slice.call(sectionNav.querySelectorAll('.section-nav-links a'));
+    var navSections = sectionLinks.map(function (link) {
+      return {
+        id: link.getAttribute('data-section'),
+        label: link.textContent.trim(),
+        link: link,
+        element: document.getElementById(link.getAttribute('data-section'))
+      };
+    }).filter(function (item) { return item.element; });
+    var navTicking = false;
+
+    function closeSectionNav() {
+      sectionNav.classList.remove('is-open');
+      if (sectionToggle) sectionToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    function setSectionNavVisible(show) {
+      sectionNav.classList.toggle('is-visible', show);
+      sectionNav.setAttribute('aria-hidden', show ? 'false' : 'true');
+      if (!show) closeSectionNav();
+    }
+
+    function setActiveSection(item) {
+      navSections.forEach(function (section) {
+        if (section === item) section.link.setAttribute('aria-current', 'location');
+        else section.link.removeAttribute('aria-current');
+      });
+      if (sectionCurrent && item) sectionCurrent.textContent = item.label;
+    }
+
+    function updateSectionNav() {
+      var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      var hasPassedHero = hero.getBoundingClientRect().bottom < 0;
+      var finalRect = finalSection.getBoundingClientRect();
+      var finalIsVisible = finalRect.top < viewportHeight && finalRect.bottom > 0;
+      var finalHasPassed = finalRect.bottom <= 0;
+      setSectionNavVisible(hasPassedHero && !finalIsVisible && !finalHasPassed);
+
+      var marker = sectionNav.offsetHeight + 28;
+      var active = navSections[0];
+      navSections.forEach(function (section) {
+        if (section.element.getBoundingClientRect().top <= marker) active = section;
+      });
+      setActiveSection(active);
+      navTicking = false;
+    }
+
+    function requestSectionNavUpdate() {
+      if (navTicking) return;
+      navTicking = true;
+      window.requestAnimationFrame(updateSectionNav);
+    }
+
+    if (sectionToggle) {
+      sectionToggle.addEventListener('click', function () {
+        var open = !sectionNav.classList.contains('is-open');
+        sectionNav.classList.toggle('is-open', open);
+        sectionToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+    sectionLinks.forEach(function (link) { link.addEventListener('click', closeSectionNav); });
+    document.addEventListener('click', function (event) {
+      if (!sectionNav.contains(event.target)) closeSectionNav();
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        closeSectionNav();
+        if (sectionToggle && window.matchMedia('(max-width: 760px)').matches) sectionToggle.focus();
+      }
+    });
+    window.addEventListener('scroll', requestSectionNavUpdate, { passive: true });
+    window.addEventListener('resize', requestSectionNavUpdate);
+    updateSectionNav();
   }
 
   // 影片卡：點擊後置換為 YouTube iframe
