@@ -1387,16 +1387,30 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 
 /* ---------- 06 FAQ ---------- */
 .sec-faq { background: var(--bg-light); }
-.faq-list { margin-top: 36px; counter-reset: faq; }
-.faq-list details { background: #fff; border: 1px solid var(--line); border-radius: 14px; margin-bottom: 12px; overflow: hidden; transition: box-shadow .2s ease; }
-.faq-list details[open] { box-shadow: var(--shadow-md); }
-.faq-list summary { list-style: none; cursor: pointer; font-weight: 700; font-size: 0.99rem; padding: 19px 54px 19px 60px; position: relative; counter-increment: faq; }
-.faq-list summary::-webkit-details-marker { display: none; }
-.faq-list summary::before { content: counter(faq, decimal-leading-zero); position: absolute; left: 22px; top: 50%; transform: translateY(-50%); font-size: 0.8rem; font-weight: 900; color: var(--teal-dark); font-variant-numeric: tabular-nums; }
-.faq-list summary::after { content: "+"; position: absolute; right: 22px; top: 50%; transform: translateY(-50%); font-size: 1.35rem; font-weight: 400; color: var(--teal-dark); }
-.faq-list details[open] summary::after { content: "−"; }
-.faq-list .faq-a { padding: 0 24px 22px 60px; font-size: 0.92rem; color: var(--gray); }
-.faq-list .faq-a a { color: var(--teal-deep); font-weight: 700; }
+.sec-faq .container-narrow { max-width: 1180px; }
+.faq-groups { margin-top: 42px; counter-reset: faq; display: grid; gap: 34px; }
+.faq-group { padding: 26px; border: 1px solid rgba(0,105,92,.11); border-radius: 22px; background: rgba(255,255,255,.58); box-shadow: var(--shadow-sm); }
+.faq-group-head { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: center; margin-bottom: 18px; }
+.faq-group-no { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: var(--teal-pale); color: var(--teal-deep); font-size: .76rem; font-weight: 900; font-variant-numeric: tabular-nums; }
+.faq-group h3 { margin: 0 0 3px; color: var(--text); font-size: 1.08rem; }
+.faq-group-head p { margin: 0; color: var(--text-mute); font-size: .82rem; line-height: 1.5; }
+.faq-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; align-items: start; }
+.faq-grid details { background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+.faq-grid details:hover { border-color: rgba(0,105,92,.26); transform: translateY(-1px); }
+.faq-grid details[open] { border-color: rgba(0,105,92,.22); box-shadow: var(--shadow-md); transform: none; }
+.faq-grid summary { min-height: 72px; display: flex; align-items: center; list-style: none; cursor: pointer; font-weight: 700; font-size: 0.94rem; line-height: 1.5; padding: 16px 52px 16px 58px; position: relative; counter-increment: faq; }
+.faq-grid summary:focus-visible { outline: 3px solid rgba(0,196,179,.3); outline-offset: -3px; }
+.faq-grid summary::-webkit-details-marker { display: none; }
+.faq-grid summary::before { content: counter(faq, decimal-leading-zero); position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-size: 0.75rem; font-weight: 900; color: var(--teal-dark); font-variant-numeric: tabular-nums; }
+.faq-grid summary::after { content: "+"; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: 1.25rem; font-weight: 500; color: var(--teal-dark); }
+.faq-grid details[open] summary::after { content: "−"; }
+.faq-grid .faq-a { padding: 0 22px 20px 58px; font-size: 0.88rem; color: var(--gray); }
+.faq-grid .faq-a a { color: var(--teal-deep); font-weight: 700; }
+@media (max-width: 760px) {
+  .faq-groups { gap: 22px; }
+  .faq-group { padding: 20px 16px; border-radius: 18px; }
+  .faq-grid { grid-template-columns: 1fr; }
+}
 
 /* ---------- 結尾 CTA ---------- */
 .sec-final { position: relative; background: radial-gradient(680px 420px at 8% 100%, rgba(255,163,0,.18), transparent 68%), radial-gradient(720px 460px at 94% 4%, rgba(0,196,179,.17), transparent 70%), linear-gradient(145deg,#FFFDF8 0%,#F5FCFA 54%,#FFF9ED 100%); color: var(--text); text-align: center; overflow: hidden; border-top: 1px solid rgba(0,105,92,.08); }
@@ -1852,55 +1866,90 @@ h3 { font-size: 1.1rem; font-weight: 700; }
       <p class="sec-label">06・常見問題</p>
       <h2>報名前，家長最常問的 12 個問題</h2>
     </div>
-    <div class="faq-list reveal">
-      <details>
-        <summary>孩子幾歲可以上線上程式課？</summary>
-        <div class="faq-a">國小一年級起即可開始。玩創系列中，頑皮艾伯特適合國小 1–2 年級，麥塊與 Roblox 適合國小 3 年級起；菁英系列 Scratch 適合國小四年級以上，國中沒有程式基礎的孩子可以直接從 Python 入門。免費試聽時顧問會依孩子的年齡與程度建議適合的課程。</div>
-      </details>
-      <details>
-        <summary>完全沒有程式基礎可以上嗎？</summary>
-        <div class="faq-a">可以，多數學生都是從零開始。已經有基礎的孩子會先做程度測驗，分到相應階段的班級，不會從頭重學。</div>
-      </details>
-      <details>
-        <summary>孩子坐不住、容易分心，適合線上上課嗎？</summary>
-        <div class="faq-a">適合，因為線上課不是放影片給孩子自己看。每班 1:6–1:10 真人小班，輔導老師全程巡看每位孩子的螢幕畫面，分心會被看見、被拉回來；課堂以「做出自己的專案」推進，孩子有明確目標，反而更能專注。</div>
-      </details>
-      <details>
-        <summary>線上看影片真的學得會嗎？和自己看 YouTube 有什麼不同？</summary>
-        <div class="faq-a">差別在雙師制。影片講師負責把觀念教得標準，聽不懂可以倒回去再看一次；真人輔導老師負責確認孩子真的學會——卡關就按「我要發問」，老師依序一對一連線引導孩子自己找出錯誤，而不是把答案給他。自己看 YouTube 沒有人確認孩子做對了沒有，也沒有人陪他除錯。</div>
-      </details>
-      <details>
-        <summary>線上課程一班幾個人？</summary>
-        <div class="faq-a">依課程不同為 1:6 到 1:10 的真人小班：頑皮艾伯特 1:6、麥塊與 Roblox 1:7、Scratch 1:9、Python 以上 1:10、麥思數學 1:6，程式選手班為 8 人小班。線上班的師生比整體比實體班更小。</div>
-      </details>
-      <details>
-        <summary>上課需要準備什麼設備？</summary>
-        <div class="faq-a">大多數課程使用一般家用電腦即可（Intel i3 或 Apple M 系列以上、8GB 記憶體），需準備麥克風與耳機，桌機需自備麥克風；麥塊與 Roblox 課程需要較高規格（16GB 記憶體與獨立顯卡等級），課前顧問會逐一確認。免費試聽就在線上進行，也能順便確認家中設備是否符合。</div>
-      </details>
-      <details>
-        <summary>臨時有事，課程怎麼安排？</summary>
-        <div class="faq-a">常態課程可於家長平台申請調課；遇到臨時健康狀況，也可以聯繫課程顧問協助確認後續安排。不同課程適用方式略有差異，報名時會由顧問完整說明。</div>
-      </details>
-      <details>
-        <summary>家長怎麼知道孩子學得如何？</summary>
-        <div class="faq-a">每週上課的常態課程都有每週學習報告：每堂課後授課老師記錄今天學了什麼、孩子的表現與下一步目標，家長每週都能掌握進度，不需要在旁邊陪課。</div>
-      </details>
-      <details>
-        <summary>線上課程的老師是什麼背景？</summary>
-        <div class="faq-a">授課與輔導老師以資訊工程、資訊管理相關科系背景為主，需通過總部培訓與教學評選才能正式授課。</div>
-      </details>
-      <details>
-        <summary>上課時段怎麼安排？</summary>
-        <div class="faq-a">平日晚間與週末都有固定班表，報名時依孩子的時間選班；實際可選時段以免費試聽後顧問的說明為準。</div>
-      </details>
-      <details>
-        <summary>費用怎麼計算？可以退費嗎？</summary>
-        <div class="faq-a">課程費用依課程與堂數不同，免費試聽後由顧問完整說明，不強迫報名。退費依《補習及進修教育法》與各縣市相關規定辦理；橘子蘋果程式學苑為中華民國補教業品保協會會員。</div>
-      </details>
-      <details>
-        <summary>線上和實體課程怎麼選？</summary>
-        <div class="faq-a">兩者課綱一致。線上班師生比更小（1:6–1:10）、免接送、不限地區，居住地沒有實體教室的家庭也能上到同一套課程；喜歡現場學習氛圍的孩子可以選擇全台 12 縣市的直營教室（<a href="https://orangeapple.co/classroom">查看教學據點</a>）。免費試聽時可以和顧問討論哪種形式較適合孩子。</div>
-      </details>
+    <div class="faq-groups reveal">
+      <section class="faq-group" aria-labelledby="faq-fit-title">
+        <div class="faq-group-head">
+          <span class="faq-group-no" aria-hidden="true">01</span>
+          <div>
+            <h3 id="faq-fit-title">適合哪種孩子</h3>
+            <p>先確認起點、程度與最適合的上課形式</p>
+          </div>
+        </div>
+        <div class="faq-grid">
+          <details>
+            <summary>孩子幾歲可以上線上程式課？</summary>
+            <div class="faq-a">國小一年級起即可開始。玩創系列中，頑皮艾伯特適合國小 1–2 年級，麥塊與 Roblox 適合國小 3 年級起；菁英系列 Scratch 適合國小四年級以上，國中沒有程式基礎的孩子可以直接從 Python 入門。免費試聽時顧問會依孩子的年齡與程度建議適合的課程。</div>
+          </details>
+          <details>
+            <summary>完全沒有程式基礎可以上嗎？</summary>
+            <div class="faq-a">可以，多數學生都是從零開始。已經有基礎的孩子會先做程度測驗，分到相應階段的班級，不會從頭重學。</div>
+          </details>
+          <details>
+            <summary>線上課程一班幾個人？</summary>
+            <div class="faq-a">依課程不同為 1:6 到 1:10 的真人小班：頑皮艾伯特 1:6、麥塊與 Roblox 1:7、Scratch 1:9、Python 以上 1:10、麥思數學 1:6，程式選手班為 8 人小班。線上班的師生比整體比實體班更小。</div>
+          </details>
+          <details>
+            <summary>線上和實體課程怎麼選？</summary>
+            <div class="faq-a">兩者課綱一致。線上班師生比更小（1:6–1:10）、免接送、不限地區，居住地沒有實體教室的家庭也能上到同一套課程；喜歡現場學習氛圍的孩子可以選擇全台 12 縣市的直營教室（<a href="https://orangeapple.co/classroom">查看教學據點</a>）。免費試聽時可以和顧問討論哪種形式較適合孩子。</div>
+          </details>
+        </div>
+      </section>
+
+      <section class="faq-group" aria-labelledby="faq-learning-title">
+        <div class="faq-group-head">
+          <span class="faq-group-no" aria-hidden="true">02</span>
+          <div>
+            <h3 id="faq-learning-title">怎麼確保學得會</h3>
+            <p>從課堂專注、真人引導到家長掌握進度</p>
+          </div>
+        </div>
+        <div class="faq-grid">
+          <details>
+            <summary>孩子坐不住、容易分心，適合線上上課嗎？</summary>
+            <div class="faq-a">適合，因為線上課不是放影片給孩子自己看。每班 1:6–1:10 真人小班，輔導老師全程巡看每位孩子的螢幕畫面，分心會被看見、被拉回來；課堂以「做出自己的專案」推進，孩子有明確目標，反而更能專注。</div>
+          </details>
+          <details>
+            <summary>線上看影片真的學得會嗎？和自己看 YouTube 有什麼不同？</summary>
+            <div class="faq-a">差別在雙師制。影片講師負責把觀念教得標準，聽不懂可以倒回去再看一次；真人輔導老師負責確認孩子真的學會——卡關就按「我要發問」，老師依序一對一連線引導孩子自己找出錯誤，而不是把答案給他。自己看 YouTube 沒有人確認孩子做對了沒有，也沒有人陪他除錯。</div>
+          </details>
+          <details>
+            <summary>家長怎麼知道孩子學得如何？</summary>
+            <div class="faq-a">每週上課的常態課程都有每週學習報告：每堂課後授課老師記錄今天學了什麼、孩子的表現與下一步目標，家長每週都能掌握進度，不需要在旁邊陪課。</div>
+          </details>
+          <details>
+            <summary>線上課程的老師是什麼背景？</summary>
+            <div class="faq-a">授課與輔導老師以資訊工程、資訊管理相關科系背景為主，需通過總部培訓與教學評選才能正式授課。</div>
+          </details>
+        </div>
+      </section>
+
+      <section class="faq-group" aria-labelledby="faq-plan-title">
+        <div class="faq-group-head">
+          <span class="faq-group-no" aria-hidden="true">03</span>
+          <div>
+            <h3 id="faq-plan-title">上課與報名安排</h3>
+            <p>設備、班表、臨時狀況與費用一次確認</p>
+          </div>
+        </div>
+        <div class="faq-grid">
+          <details>
+            <summary>上課需要準備什麼設備？</summary>
+            <div class="faq-a">大多數課程使用一般家用電腦即可（Intel i3 或 Apple M 系列以上、8GB 記憶體），需準備麥克風與耳機，桌機需自備麥克風；麥塊與 Roblox 課程需要較高規格（16GB 記憶體與獨立顯卡等級），課前顧問會逐一確認。免費試聽就在線上進行，也能順便確認家中設備是否符合。</div>
+          </details>
+          <details>
+            <summary>臨時有事，課程怎麼安排？</summary>
+            <div class="faq-a">常態課程可於家長平台申請調課；遇到臨時健康狀況，也可以聯繫課程顧問協助確認後續安排。不同課程適用方式略有差異，報名時會由顧問完整說明。</div>
+          </details>
+          <details>
+            <summary>上課時段怎麼安排？</summary>
+            <div class="faq-a">平日晚間與週末都有固定班表，報名時依孩子的時間選班；實際可選時段以免費試聽後顧問的說明為準。</div>
+          </details>
+          <details>
+            <summary>費用怎麼計算？可以退費嗎？</summary>
+            <div class="faq-a">課程費用依課程與堂數不同，免費試聽後由顧問完整說明，不強迫報名。退費依《補習及進修教育法》與各縣市相關規定辦理；橘子蘋果程式學苑為中華民國補教業品保協會會員。</div>
+          </details>
+        </div>
+      </section>
     </div>
   </div>
 </section>
