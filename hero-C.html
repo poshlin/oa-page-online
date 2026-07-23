@@ -999,12 +999,14 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 .hero-c h1 { font-size: clamp(2.35rem,4.6vw,3.65rem); font-weight: 800; line-height: 1.15; letter-spacing: -.02em; margin-bottom: 22px; }
 .hero-c h1 .hl { color: var(--teal-deep); background: linear-gradient(transparent 72%, rgba(255,163,0,.58) 72%); padding: 0 2px; }
 .hero-c .lead { color: var(--gray); font-size: 1rem; line-height: 1.75; margin-bottom: 30px; }
-.hero-c .hero-cta-row { margin-bottom: 28px; }
-.hero-c .btn-primary { flex: 0 0 auto; min-width: 240px; white-space: nowrap; }
-.hero-c .btn-secondary { padding: 12px 4px; border: 0; border-radius: 0; color: var(--teal-deep); background: transparent; box-shadow: none; text-decoration: underline; text-decoration-color: rgba(0,105,92,.32); text-underline-offset: 5px; }
-.hero-c .btn-secondary:hover { color: var(--teal-deep); background: transparent; text-decoration-color: var(--teal-deep); }
+.hero-c .hero-cta-row { flex-wrap: nowrap; gap: 12px; margin-bottom: 28px; }
+.hero-c .btn-primary { flex: 1 1 0; min-width: 0; padding-inline: 18px; white-space: nowrap; }
+.hero-c .btn-secondary { flex: 1 1 0; min-width: 0; padding: 14px 18px; border: 2px solid rgba(0,105,92,.36); border-radius: 999px; color: var(--teal-deep); background: rgba(255,255,255,.82); box-shadow: var(--shadow-sm); text-align: center; white-space: nowrap; }
+.hero-c .btn-secondary:hover { color: var(--teal-deep); background: var(--teal-pale); border-color: rgba(0,105,92,.55); }
 @media (max-width: 640px) {
-  .hero-c .btn-primary { width: 100%; min-width: 0; }
+  .hero-c .hero-cta-row { flex-direction: column; }
+  .hero-c .btn-primary,
+  .hero-c .btn-secondary { width: 100%; min-width: 0; }
 }
 .hero-c-mechanism { margin: 0 0 30px; padding: 14px 16px; display: grid; grid-template-columns: auto auto 1fr; gap: 14px; align-items: center; border: 1px solid rgba(0,105,92,.16); border-radius: 18px; color: var(--text); background: rgba(255,255,255,.9); box-shadow: var(--shadow-sm); }
 .hero-c-mechanism .ask-action { min-width: 116px; padding: 10px 16px; display: flex; flex-direction: column; align-items: center; border-radius: 13px; background: var(--orange); color: var(--text); line-height: 1.25; }
@@ -1458,7 +1460,7 @@ h3 { font-size: 1.1rem; font-weight: 700; }
         <p class="lead">因為這不是丟一支影片給孩子自己看。卡住按一下「我要發問」，<span class="hl-mark">真人老師會一對一連線、看著孩子的螢幕</span>，帶他把問題想通——不限地區，海外也能上。</p>
         <div class="hero-cta-row">
           <button type="button" class="btn-primary" data-oa-cta="hero">預約免費試聽</button>
-          <a class="btn-secondary" href="#concerns">先看爸媽最擔心的 5 件事</a>
+          <a class="btn-secondary" href="https://line.me/R/ti/p/@291npklp" rel="noopener" aria-label="使用 LINE 諮詢橘子蘋果線上課程">LINE 諮詢線上課程</a>
         </div>
         <div class="hero-c-mechanism" aria-label="卡住按我要發問；等待時影片繼續播放，真人老師依序一對一進來引導">
           <span class="ask-action"><small>卡住就按</small><strong>我要發問</strong></span>
